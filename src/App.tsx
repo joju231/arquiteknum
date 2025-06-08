@@ -8,7 +8,7 @@ import Team from './components/Team';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ProjectGallery from './components/ProjectGallery';
+import ProjectGalleryExpo from './components/ProjectGalleryExpo';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -59,7 +59,7 @@ function App() {
       </div>
       
       {showGallery ? (
-        <ProjectGallery />
+        <ProjectGalleryExpo />
       ) : (
         <div className="font-sans">
           <Navbar />

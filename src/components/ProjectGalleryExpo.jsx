@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "./pop-animation.css"
-import "./fade-scale-in.css"
-import "./fade-right-in.css"
+import "../styles/pop-animation.css"
+import "../styles/fade-scale-in.css"
+import "../styles/fade-right-in.css"
 
 const ANIMATION_DURATION = 220;
 
@@ -11,107 +11,107 @@ const projects = [
   {
     id: 1,
     name: "Casa Lago",
-    cover: "https://placehold.co/300x200/EEE/31343C?text=Casa+Lago",
-    miniLogo: "https://placehold.co/20x20/EEE/31343C?text=CL",
+    cover: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg",
+    miniLogo: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg",
     images: [
-      "https://placehold.co/600x400/EEE/31343C?text=Casa+Lago+1",
-      "https://placehold.co/600x400/DDD/31343C?text=Casa+Lago+2",
-      "https://placehold.co/600x400/CCC/31343C?text=Casa+Lago+3",
+      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg",
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg",
     ],
   },
   {
     id: 2,
     name: "Edificio Norte",
-    cover: "https://placehold.co/300x200/BBB/31343C?text=Edificio+Norte",
-    miniLogo: "https://placehold.co/20x20/BBB/31343C?text=EN",
+    cover: "https://images.pexels.com/photos/425128/pexels-photo-425128.jpeg",
+    miniLogo: "https://images.pexels.com/photos/425128/pexels-photo-425128.jpeg",
     images: [
-      "https://placehold.co/600x400/BBB/31343C?text=Edificio+Norte+1",
-      "https://placehold.co/600x400/AAA/31343C?text=Edificio+Norte+2",
+      "https://images.pexels.com/photos/425128/pexels-photo-425128.jpeg",
+      "https://images.pexels.com/photos/434139/pexels-photo-434139.jpeg",
     ],
   },
   {
     id: 3,
     name: "Pabellón Sur",
-    cover: "https://placehold.co/300x200/CCC/31343C?text=Pabellón+Sur",
-    miniLogo: "https://placehold.co/20x20/CCC/31343C?text=PS",
+    cover: "https://images.pexels.com/photos/705767/pexels-photo-705767.jpeg",
+    miniLogo: "https://images.pexels.com/photos/705767/pexels-photo-705767.jpeg",
     images: [
-      "https://placehold.co/600x400/CCC/31343C?text=Pabellón+Sur+1",
-      "https://placehold.co/600x400/999/31343C?text=Pabellón+Sur+2",
-      "https://placehold.co/600x400/888/31343C?text=Pabellón+Sur+3",
-      "https://placehold.co/600x400/777/31343C?text=Pabellón+Sur+4",
+      "https://images.pexels.com/photos/705767/pexels-photo-705767.jpeg",
+      "https://images.pexels.com/photos/1797157/pexels-photo-1797157.jpeg",
+      "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg",
+      "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
     ],
   },
   {
     id: 4,
     name: "Parque Central",
-    cover: "https://placehold.co/300x200/AAF/31343C?text=Parque+Central",
-    miniLogo: "https://placehold.co/20x20/AAF/31343C?text=PC",
+    cover: "https://images.pexels.com/photos/434139/pexels-photo-434139.jpeg",
+    miniLogo: "https://images.pexels.com/photos/434139/pexels-photo-434139.jpeg",
     images: [
-      "https://placehold.co/600x400/AAF/31343C?text=Parque+Central+1",
-      "https://placehold.co/600x400/44F/31343C?text=Parque+Central+2",
+      "https://images.pexels.com/photos/434139/pexels-photo-434139.jpeg",
+      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
     ],
   },
   {
     id: 5,
     name: "Torre Este",
-    cover: "https://placehold.co/300x200/FFA/31343C?text=Torre+Este",
-    miniLogo: "https://placehold.co/20x20/FFA/31343C?text=TE",
+    cover: "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg",
+    miniLogo: "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg",
     images: [
-      "https://placehold.co/600x400/FFA/31343C?text=Torre+Este+1",
-      "https://placehold.co/600x400/FA0/31343C?text=Torre+Este+2",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg",
+      "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg",
     ],
   },
   {
     id: 6,
     name: "Jardines Urbanos",
-    cover: "https://placehold.co/300x200/0AF/31343C?text=Jardines+Urbanos",
-    miniLogo: "https://placehold.co/20x20/0AF/31343C?text=JU",
+    cover: "https://images.pexels.com/photos/1797157/pexels-photo-1797157.jpeg",
+    miniLogo: "https://images.pexels.com/photos/1797157/pexels-photo-1797157.jpeg",
     images: [
-      "https://placehold.co/600x400/0AF/31343C?text=Jardines+Urbanos+1",
-      "https://placehold.co/600x400/0AA/31343C?text=Jardines+Urbanos+2",
-      "https://placehold.co/600x400/0FF/31343C?text=Jardines+Urbanos+3",
+      "https://images.pexels.com/photos/1797157/pexels-photo-1797157.jpeg",
+      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
     ],
   },
   {
     id: 7,
     name: "Mirador Oeste",
-    cover: "https://placehold.co/300x200/F0A/31343C?text=Mirador+Oeste",
-    miniLogo: "https://placehold.co/20x20/F0A/31343C?text=MO",
+    cover: "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg",
+    miniLogo: "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg",
     images: [
-      "https://placehold.co/600x400/F0A/31343C?text=Mirador+Oeste+1",
-      "https://placehold.co/600x400/F00/31343C?text=Mirador+Oeste+2",
+      "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg",
+      "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
     ],
   },
   {
     id: 8,
     name: "Residencial Delta",
-    cover: "https://placehold.co/300x200/0FA/31343C?text=Residencial+Delta",
-    miniLogo: "https://placehold.co/20x20/0FA/31343C?text=RD",
+    cover: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
+    miniLogo: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
     images: [
-      "https://placehold.co/600x400/0FA/31343C?text=Residencial+Delta+1",
-      "https://placehold.co/600x400/0A0/31343C?text=Residencial+Delta+2",
-      "https://placehold.co/600x400/0FF/31343C?text=Residencial+Delta+3",
+      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
+      "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg",
+      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
     ],
   },
   {
     id: 9,
     name: "Centro Cultural",
-    cover: "https://placehold.co/300x200/CFA/31343C?text=Centro+Cultural",
-    miniLogo: "https://placehold.co/20x20/CFA/31343C?text=CC",
+    cover: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg",
+    miniLogo: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg",
     images: [
-      "https://placehold.co/600x400/CFA/31343C?text=Centro+Cultural+1",
-      "https://placehold.co/600x400/CCC/31343C?text=Centro+Cultural+2",
+      "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg",
+      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
     ],
   },
   {
     id: 10,
     name: "Galería Río",
-    cover: "https://placehold.co/300x200/3AF/31343C?text=Galería+Río",
-    miniLogo: "https://placehold.co/20x20/3AF/31343C?text=GR",
+    cover: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+    miniLogo: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
     images: [
-      "https://placehold.co/600x400/3AF/31343C?text=Galería+Río+1",
-      "https://placehold.co/600x400/3AA/31343C?text=Galería+Río+2",
-      "https://placehold.co/600x400/3FF/31343C?text=Galería+Río+3",
+      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
+      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg",
     ],
   },
 ];
