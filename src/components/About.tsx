@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Container from './Container';
+import Hero from './Hero.tsx'
 import { Award, Home, Users, Mail, Phone, MapPin, Instagram, Twitter, Facebook, Linkedin, ArrowLeft } from 'lucide-react';
 import Logo from './Logo';
 
