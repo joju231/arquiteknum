@@ -176,112 +176,105 @@ const ProjectGalleryExpo: React.FC = () => {
         </span>
       </Link>
 
-      <div className="flex w-full h-screen max-h-screen overflow-hidden min-h-0">
-        {/* LEFT BAR */}
-        <div className="flex flex-col justify-center items-center w-16 bg-black border-r border-gray-900 shrink-0">
-          <div className="flex flex-col items-center select-none">
-            {Array.from("ARQTKNM").map((letter, idx) => (
-              <span
-                key={idx}
-                className="text-2xl font-bold text-red-500"
-                style={{
-                  lineHeight: "2.6",
-                  marginBottom: "0.25em",
-                  userSelect: "none",
-                }}
-              >
-                {letter}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* CENTER SLIDER */}
-        <div className="flex-1 flex items-center justify-center px-2 md:px-8 bg-gray-100 min-h-0 relative">
-          {/* Mini logo in top left */}
-          <div className="absolute top-4 left-4 z-20">
-            <img
-              src={activeProject.miniLogo}
-              alt={`${activeProject.name} mini logo`}
-              className="w-10 h-10 object-cover rounded-md border border-gray-200 bg-white"
-              style={{ background: "#eee" }}
-            />
-          </div>
-          <Swiper
-            ref={swiperRef}
-            slidesPerView={1}
-            spaceBetween={0}
-            className="w-full max-w-4xl"
-          >
-            {activeProject.images.map((img, i) => {
-              const image = typeof img === "string" ? { src: img, caption: null } : img;
-            
-              return (
-                <SwiperSlide key={i}>
-                  <div
-                    className={`relative rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center ${
-                      sliderAnimating ? "animate-fade-right-in" : ""
-                    }`}
-                    style={{ minHeight: "50vh" }}
-                  >
-                    <img
-                      src={image.src}
-                      alt={`Image ${i + 1} of ${activeProject.name}`}
-                      className="w-auto h-auto max-w-[90vw] max-h-[75vh] object-contain"
-                    />
-                    {image.caption && (
-                      <div className="absolute bottom-4 left-4 bg-white/80 px-4 py-2 rounded-md shadow text-sm text-gray-800 max-w-[80%]">
-                        {image.caption}
-                      </div>
-                    )}
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </div>
-
-        {/* RIGHT PROJECT CARDS */}
-        <div className="flex flex-col gap-4 p-2 md:p-4 w-20 md:w-56 border-l border-gray-900 shrink-0 bg-white overflow-y-auto h-full min-h-0">
-          {projects.map((project) => (
-            <button
-              key={project.id}
-              type="button"
-              disabled={!!animating}
-              className={`group rounded-lg overflow-visible shadow focus:outline-none transition-all flex-shrink-0 bg-transparent border-0
-                ${selected === project.id ? "ring-2 ring-red-500" : "opacity-70 hover:opacity-100"}
-              `}
-              style={{ minHeight: '5.5rem' }}
-              onClick={() => handleCardClick(project.id)}
-              tabIndex={0}
+     <div
+      className="flex flex-col md:flex-row w-screen h-screen max-h-screen overflow-hidden"
+      style={{ fontFamily: "var(--main-font)" }}
+      >
+      {/* LEFT BAR */}
+      <div className="flex flex-row md:flex-col justify-center items-center w-full md:w-16 bg-black border-b md:border-b-0 md:border-r border-gray-900 shrink-0">
+        <div className="flex md:flex-col items-center justify-center select-none p-2">
+          {Array.from("ARQTKNM").map((letter, idx) => (
+            <span
+              key={idx}
+              className="text-xl md:text-2xl font-bold text-red-500"
+              style={{ lineHeight: "2", marginBottom: "0.2em" }}
             >
-              <div className="relative flex items-center justify-center">
-                <img
-                  src={project.cover}
-                  alt={project.name}
-                  className={`
-                    w-full h-16 md:h-32 object-cover rounded-md transition-transform
-                    ${animating === project.id ? "animate-fade-scale-in" : ""}
-                  `}
-                  style={{
-                    pointerEvents: "none",
-                    willChange: "transform, opacity",
-                  }}
-                />
-              </div>
-              <div className="p-2 bg-white text-left hidden md:flex items-center gap-2">
-                <img
-                  src={project.miniLogo}
-                  alt={`${project.name} mini logo`}
-                  className="w-5 h-5 object-cover rounded-sm"
-                  style={{ background: "#eee" }}
-                />
-                <span className="font-semibold text-sm text-black">{project.name}</span>
-              </div>
-            </button>
+              {letter}
+            </span>
           ))}
         </div>
       </div>
+    
+      {/* CENTER SLIDER */}
+      <div className="flex-1 flex items-center justify-center px-2 sm:px-4 md:px-8 bg-gray-100 relative overflow-hidden">
+        {/* Mini logo in top left */}
+        <div className="absolute top-2 left-2 md:top-4 md:left-4 z-20">
+          <img
+            src={activeProject.miniLogo}
+            alt={`${activeProject.name} mini logo`}
+            className="w-8 h-8 md:w-10 md:h-10 object-cover rounded-md border border-gray-200 bg-white"
+          />
+        </div>
+    
+        <Swiper
+          ref={swiperRef}
+          slidesPerView={1}
+          spaceBetween={0}
+          className="w-full max-w-full sm:max-w-2xl md:max-w-4xl h-full"
+        >
+          {activeProject.images.map((img, i) => {
+            const image = typeof img === "string" ? { src: img, caption: null } : img;
+    
+            return (
+              <SwiperSlide key={i}>
+                <div
+                  className={`relative flex items-center justify-center bg-gray-100 h-[60vh] sm:h-[70vh] md:h-[75vh] ${
+                    sliderAnimating ? "animate-fade-right-in" : ""
+                  }`}
+                >
+                  <img
+                    src={image.src}
+                    alt={`Image ${i + 1} of ${activeProject.name}`}
+                    className="w-auto h-auto max-w-[90vw] max-h-[100%] object-contain"
+                  />
+                  {image.caption && (
+                    <div className="absolute bottom-4 left-4 bg-white/80 px-4 py-2 rounded-md shadow text-sm text-gray-800 max-w-[80%]">
+                      {image.caption}
+                    </div>
+                  )}
+                </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+    
+      {/* RIGHT PROJECT CARDS */}
+      <div className="flex flex-row md:flex-col gap-2 md:gap-4 p-2 md:p-4 w-full md:w-20 lg:w-56 border-t md:border-t-0 md:border-l border-gray-900 bg-white overflow-x-auto md:overflow-y-auto">
+        {projects.map((project) => (
+          <button
+            key={project.id}
+            type="button"
+            disabled={!!animating}
+            className={`group flex-shrink-0 rounded-lg transition-all ${
+              selected === project.id
+                ? "ring-2 ring-red-500"
+                : "opacity-70 hover:opacity-100"
+            }`}
+            onClick={() => handleCardClick(project.id)}
+          >
+            <div className="flex flex-col items-start md:items-center">
+              <img
+                src={project.cover}
+                alt={project.name}
+                className={`
+                  w-32 h-20 md:w-full md:h-20 object-cover rounded-md
+                  ${animating === project.id ? "animate-fade-scale-in" : ""}
+                `}
+              />
+              <div className="hidden md:flex items-center gap-2 mt-1 px-1">
+                <img
+                  src={project.miniLogo}
+                  alt={`${project.name} mini logo`}
+                  className="w-4 h-4 object-cover rounded-sm"
+                />
+                <span className="font-medium text-xs text-black">{project.name}</span>
+              </div>
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
     </div>
   );
 };
