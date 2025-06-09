@@ -225,7 +225,7 @@ const ProjectGalleryExpo: React.FC = () => {
                 >
                   {/* Texto si existe */}
                   {image.caption && (
-                    <div className="w-full md:w-1/2 text-left text-gray-800 text-base leading-relaxed max-w-xl">
+                    <div className="w-[25vw] md:w-1/2 text-left text-gray-800 text-base leading-relaxed max-w-xl">
                       <p>{image.caption}</p>
                     </div>
                   )}
