@@ -218,21 +218,26 @@ const ProjectGalleryExpo: React.FC = () => {
             return (
               <SwiperSlide key={i}>
                 <div
-                  className={`relative flex items-center justify-center bg-gray-100 h-[60vh] sm:h-[70vh] md:h-[75vh] px-4 pt-12 ${
+                  className={`relative bg-gray-100 w-full h-full px-4 md:px-8 py-8 flex flex-col md:flex-row items-center justify-center gap-6 ${
                     sliderAnimating ? "animate-fade-right-in" : ""
                   }`}
+                  style={{ minHeight: "60vh" }}
                 >
-
-                  <img
-                    src={image.src}
-                    alt={`Image ${i + 1} of ${activeProject.name}`}
-                    className="w-auto h-auto max-w-[90vw] max-h-[100%] object-contain"
-                  />
+                  {/* Texto si existe */}
                   {image.caption && (
-                    <div className="absolute bottom-4 left-4 bg-white/80 px-4 py-2 rounded-md shadow text-sm text-gray-800 max-w-[80%]">
-                      {image.caption}
+                    <div className="w-full md:w-1/2 text-left text-gray-800 text-base leading-relaxed max-w-xl">
+                      <p>{image.caption}</p>
                     </div>
                   )}
+              
+                  {/* Imagen */}
+                  <div className="w-full md:w-1/2 flex justify-center items-center">
+                    <img
+                      src={image.src}
+                      alt={`Image ${i + 1} of ${activeProject.name}`}
+                      className="w-auto h-auto max-w-[90vw] max-h-[60vh] object-contain"
+                    />
+                  </div>
                 </div>
               </SwiperSlide>
             );
