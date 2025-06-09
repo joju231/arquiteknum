@@ -14,9 +14,18 @@ const projects = [
     cover: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg",
     miniLogo: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg",
     images: [
-      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg",
-      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg",
-      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg",
+      {
+        src: "https://placehold.co/600x400/EEE/31343C?text=Casa+Lago+1",
+        caption: "View of the lake-facing façade at sunrise.",
+      },
+      {
+        src: "https://placehold.co/600x400/DDD/31343C?text=Casa+Lago+2",
+        caption: null,
+      },
+      {
+        src: "https://placehold.co/600x400/CCC/31343C?text=Casa+Lago+3",
+        caption: "Interior courtyard designed for passive ventilation.",
+      },
     ],
   },
   {
