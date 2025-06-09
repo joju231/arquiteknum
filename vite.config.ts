@@ -7,4 +7,4 @@ export default {
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-};
+} satisfies UserConfig;
