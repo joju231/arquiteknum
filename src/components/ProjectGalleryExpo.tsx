@@ -207,25 +207,31 @@ const ProjectGalleryExpo: React.FC = () => {
             spaceBetween={0}
             className="w-full max-w-4xl"
           >
-            {activeProject.images.map((img, i) => (
-              <SwiperSlide key={i}>
-                <div
-                  className={
-                    `rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center ` +
-                    (sliderAnimating ? "animate-fade-right-in" : "")
-                  }
-                  style={{
-                    minHeight: "50vh",
-                  }}
-                >
-                  <img
-                    src={img}
-                    alt={`Imagen ${i + 1} de ${activeProject.name}`}
-                    className="w-auto h-auto max-w-[90vw] max-h-[75vh] object-contain"
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
+            {activeProject.images.map((img, i) => {
+              const image = typeof img === "string" ? { src: img, caption: null } : img;
+            
+              return (
+                <SwiperSlide key={i}>
+                  <div
+                    className={`relative rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center ${
+                      sliderAnimating ? "animate-fade-right-in" : ""
+                    }`}
+                    style={{ minHeight: "50vh" }}
+                  >
+                    <img
+                      src={image.src}
+                      alt={`Image ${i + 1} of ${activeProject.name}`}
+                      className="w-auto h-auto max-w-[90vw] max-h-[75vh] object-contain"
+                    />
+                    {image.caption && (
+                      <div className="absolute bottom-4 left-4 bg-white/80 px-4 py-2 rounded-md shadow text-sm text-gray-800 max-w-[80%]">
+                        {image.caption}
+                      </div>
+                    )}
+                  </div>
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
 
