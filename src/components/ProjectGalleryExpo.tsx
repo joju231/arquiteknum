@@ -218,7 +218,7 @@ const ProjectGalleryExpo: React.FC = () => {
             return (
               <SwiperSlide key={i}>
                 <div
-                  className={`relative flex items-center justify-center bg-gray-100 h-[60vh] sm:h-[70vh] md:h-[75vh] ${
+                  className={`relative flex items-center justify-center  bg-gray-100 h-full sm:h-[70vh] md:h-[75vh] ${
                     sliderAnimating ? "animate-fade-right-in" : ""
                   }`}
                 >
