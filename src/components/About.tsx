@@ -119,6 +119,7 @@ const About: React.FC = () => {
       <div className="py-12">
         {/* Hero Section */}
         <Container>
+          <Hero>
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-6">
               <Logo className="text-red-600" size={32} />
