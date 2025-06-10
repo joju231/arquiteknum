@@ -201,11 +201,11 @@ const ProjectGalleryExpo: React.FC = () => {
       {/* Gallery Section */}
       <div className="min-h-screen bg-gray-50">
         {/* Section Header */}
-        <div className="py-12 text-center border-b border-gray-200">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="py-8 md:py-12 text-center border-b border-gray-200">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4 px-4">
             Nuestros Proyectos
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto px-4">
+          <p className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto px-4">
             Explora nuestra colección de proyectos arquitectónicos que definen espacios únicos y funcionales
           </p>
         </div>
@@ -213,13 +213,13 @@ const ProjectGalleryExpo: React.FC = () => {
         {/* Gallery Layout */}
         <div className="flex flex-col lg:flex-row min-h-screen">
           {/* Project Cards - Mobile/Tablet Horizontal, Desktop Vertical */}
-          <div className="lg:w-80 bg-white border-b lg:border-b-0 lg:border-r border-gray-200 p-4 lg:p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4 hidden lg:block">
+          <div className="lg:w-80 xl:w-96 bg-white border-b lg:border-b-0 lg:border-r border-gray-200 p-3 md:p-4 lg:p-6">
+            <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4 hidden lg:block">
               Seleccionar Proyecto
             </h3>
             
             {/* Mobile/Tablet: Horizontal scroll */}
-            <div className="flex lg:hidden gap-3 overflow-x-auto pb-4 -mx-4 px-4">
+            <div className="flex lg:hidden gap-2 md:gap-3 overflow-x-auto pb-3 md:pb-4 -mx-3 md:-mx-4 px-3 md:px-4 scrollbar-hide">
               {projects.map((project) => (
                 <button
                   key={project.id}
@@ -232,17 +232,17 @@ const ProjectGalleryExpo: React.FC = () => {
                   }`}
                   onClick={() => handleCardClick(project.id)}
                 >
-                  <div className="w-24 h-16 relative">
+                  <div className="w-20 h-14 md:w-24 md:h-16 relative">
                     <img
                       src={project.cover}
                       alt={project.name}
-                      className={`w-full h-full object-cover rounded-lg ${
+                      className={`w-full h-full object-cover rounded-md md:rounded-lg ${
                         animating === project.id ? "animate-fade-scale-in" : ""
                       }`}
                     />
-                    <div className="absolute inset-0 bg-black/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-black/20 rounded-md md:rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <p className="text-xs font-medium text-gray-700 mt-1 text-center">
+                  <p className="text-xs font-medium text-gray-700 mt-1 text-center max-w-20 md:max-w-24 truncate">
                     {project.name}
                   </p>
                 </button>
@@ -250,7 +250,7 @@ const ProjectGalleryExpo: React.FC = () => {
             </div>
 
             {/* Desktop: Vertical list */}
-            <div className="hidden lg:flex flex-col gap-3 max-h-[calc(100vh-200px)] overflow-y-auto">
+            <div className="hidden lg:flex flex-col gap-2 xl:gap-3 max-h-[calc(100vh-200px)] overflow-y-auto scrollbar-hide">
               {projects.map((project) => (
                 <button
                   key={project.id}
@@ -267,15 +267,15 @@ const ProjectGalleryExpo: React.FC = () => {
                     <img
                       src={project.cover}
                       alt={project.name}
-                      className={`w-16 h-12 object-cover rounded-md ${
+                      className={`w-14 h-10 xl:w-16 xl:h-12 object-cover rounded-md ${
                         animating === project.id ? "animate-fade-scale-in" : ""
                       }`}
                     />
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-medium text-gray-900 truncate">
+                      <h4 className="font-medium text-gray-900 truncate text-sm xl:text-base">
                         {project.name}
                       </h4>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-xs xl:text-sm text-gray-500">
                         {Array.isArray(activeProject.images) ? activeProject.images.length : 0} imágenes
                       </p>
                     </div>
@@ -288,46 +288,46 @@ const ProjectGalleryExpo: React.FC = () => {
           {/* Main Content Area */}
           <div className="flex-1 relative bg-gray-100">
             {/* Project Info Header */}
-            <div className="bg-white border-b border-gray-200 p-4 lg:p-6">
+            <div className="bg-white border-b border-gray-200 p-3 md:p-4 lg:p-6">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 md:gap-3 min-w-0 flex-1">
                   <img
                     src={activeProject.miniLogo}
                     alt={`${activeProject.name} logo`}
-                    className="w-10 h-10 object-cover rounded-lg border border-gray-200"
+                    className="w-8 h-8 md:w-10 md:h-10 object-cover rounded-md lg:rounded-lg border border-gray-200 flex-shrink-0"
                   />
-                  <div>
-                    <h1 className="text-xl lg:text-2xl font-bold text-gray-900">
+                  <div className="min-w-0 flex-1">
+                    <h1 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 truncate">
                       {activeProject.name}
                     </h1>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-xs md:text-sm text-gray-500">
                       {currentSlide + 1} de {Array.isArray(activeProject.images) ? activeProject.images.length : 0}
                     </p>
                   </div>
                 </div>
 
                 {/* Navigation Controls */}
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1 md:gap-2 flex-shrink-0">
                   <button
                     onClick={prevSlide}
-                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors disabled:opacity-50"
+                    className="p-1.5 md:p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors disabled:opacity-50"
                     disabled={currentSlide === 0}
                   >
-                    <ChevronLeft size={20} />
+                    <ChevronLeft size={16} className="md:w-5 md:h-5" />
                   </button>
                   <button
                     onClick={nextSlide}
-                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors disabled:opacity-50"
+                    className="p-1.5 md:p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors disabled:opacity-50"
                     disabled={currentSlide === (Array.isArray(activeProject.images) ? activeProject.images.length - 1 : 0)}
                   >
-                    <ChevronRight size={20} />
+                    <ChevronRight size={16} className="md:w-5 md:h-5" />
                   </button>
                 </div>
               </div>
             </div>
 
             {/* Image Slider */}
-            <div className="h-[calc(100vh-200px)] lg:h-[calc(100vh-160px)] relative">
+            <div className="h-[50vh] md:h-[60vh] lg:h-[calc(100vh-160px)] relative">
               <Swiper
                 ref={swiperRef}
                 slidesPerView={1}
@@ -346,22 +346,22 @@ const ProjectGalleryExpo: React.FC = () => {
                         }`}
                       >
                         {/* Image */}
-                        <div className="flex-1 flex items-center justify-center p-4 lg:p-8">
+                        <div className="flex-1 flex items-center justify-center p-2 md:p-4 lg:p-8">
                           <img
                             src={image.src}
                             alt={`Image ${i + 1} of ${activeProject.name}`}
-                            className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+                            className="max-w-full max-h-full object-contain rounded-md md:rounded-lg shadow-lg"
                           />
                         </div>
 
                         {/* Caption */}
                         {image.caption && (
-                          <div className="lg:w-80 bg-white/95 backdrop-blur-sm p-6 lg:p-8 border-t lg:border-t-0 lg:border-l border-gray-200">
+                          <div className="lg:w-72 xl:w-80 bg-white/95 backdrop-blur-sm p-4 md:p-6 lg:p-8 border-t lg:border-t-0 lg:border-l border-gray-200">
                             <div className="max-w-none lg:max-w-sm">
-                              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                              <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-2 md:mb-3">
                                 Descripción
                               </h3>
-                              <p className="text-gray-700 leading-relaxed">
+                              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                                 {image.caption}
                               </p>
                             </div>
@@ -374,13 +374,13 @@ const ProjectGalleryExpo: React.FC = () => {
               </Swiper>
 
               {/* Slide Indicators */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">
-                <div className="flex gap-2 bg-black/20 backdrop-blur-sm rounded-full px-3 py-2">
+              <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 z-10">
+                <div className="flex gap-1 md:gap-2 bg-black/20 backdrop-blur-sm rounded-full px-2 md:px-3 py-1 md:py-2">
                   {activeProject.images.map((_, i) => (
                     <button
                       key={i}
                       onClick={() => swiperRef.current?.swiper.slideTo(i)}
-                      className={`w-2 h-2 rounded-full transition-all ${
+                      className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-all ${
                         i === currentSlide ? "bg-white" : "bg-white/50"
                       }`}
                     />
