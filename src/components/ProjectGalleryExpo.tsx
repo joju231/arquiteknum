@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Info } from "lucide-react";
+import { Info, ChevronLeft, ChevronRight } from "lucide-react";
+import Hero from "./Hero";
 import "swiper/css";
 import "../styles/pop-animation.css"
 import "../styles/fade-scale-in.css"
@@ -131,6 +132,7 @@ const ProjectGalleryExpo: React.FC = () => {
   const [selected, setSelected] = useState(projects[0].id);
   const [animating, setAnimating] = useState<number | null>(null);
   const [sliderAnimating, setSliderAnimating] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const swiperRef = useRef<any>(null);
 
@@ -141,6 +143,7 @@ const ProjectGalleryExpo: React.FC = () => {
       setSelected(projectId);
       setAnimating(null);
       setSliderAnimating(true);
+      setCurrentSlide(0);
     }, ANIMATION_DURATION);
   };
 
@@ -162,8 +165,27 @@ const ProjectGalleryExpo: React.FC = () => {
 
   if (!activeProject) return null;
 
+  const handleSlideChange = (swiper: any) => {
+    setCurrentSlide(swiper.activeIndex);
+  };
+
+  const nextSlide = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+
+  const prevSlide = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
   return (
-    <div className="relative">
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <Hero />
+
       {/* About Button */}
       <Link
         to="/about"
@@ -176,111 +198,199 @@ const ProjectGalleryExpo: React.FC = () => {
         </span>
       </Link>
 
-     <div
-      className="flex flex-col md:flex-row w-screen h-screen max-h-screen overflow-hidden"
-      style={{ fontFamily: "var(--main-font)" }}
-      >
-      {/* LEFT BAR */}
-      <div className="flex flex-row md:flex-col justify-center items-center w-full md:w-16 bg-black border-b md:border-b-0 md:border-r border-gray-900 shrink-0">
-        <div className="flex md:flex-col items-center justify-center select-none p-2">
-          {Array.from("ARQTKNM").map((letter, idx) => (
-            <span
-              key={idx}
-              className="text-xl md:text-2xl font-bold text-red-500"
-              style={{ lineHeight: "2", marginBottom: "0.2em" }}
-            >
-              {letter}
-            </span>
-          ))}
+      {/* Gallery Section */}
+      <div className="min-h-screen bg-gray-50">
+        {/* Section Header */}
+        <div className="py-12 text-center border-b border-gray-200">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Nuestros Proyectos
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto px-4">
+            Explora nuestra colección de proyectos arquitectónicos que definen espacios únicos y funcionales
+          </p>
         </div>
-      </div>
-    
-      {/* CENTER SLIDER */}
-      <div className="flex-1 flex items-center justify-center px-2 sm:px-4 md:px-8 bg-gray-100 relative overflow-hidden">
-        {/* Mini logo in top left */}
-        <div className="absolute top-2 left-2 md:top-4 md:left-4 z-20">
-          <img
-            src={activeProject.miniLogo}
-            alt={`${activeProject.name} mini logo`}
-            className="w-8 h-8 md:w-10 md:h-10 object-cover rounded-md border border-gray-200 bg-white"
-          />
-        </div>
-    
-        <Swiper
-          ref={swiperRef}
-          slidesPerView={1}
-          spaceBetween={0}
-          className="w-full max-w-full sm:max-w-2xl md:max-w-4xl h-full"
-        >
-          {activeProject.images.map((img, i) => {
-            const image = typeof img === "string" ? { src: img, caption: null } : img;
-    
-            return (
-              <SwiperSlide key={i}>
-                <div
-                  className={`relative bg-gray-100 w-full h-full px-4 md:px-8 py-8 flex flex-col md:flex-row items-center justify-center gap-6 ${
-                    sliderAnimating ? "animate-fade-right-in" : ""
+
+        {/* Gallery Layout */}
+        <div className="flex flex-col lg:flex-row min-h-screen">
+          {/* Project Cards - Mobile/Tablet Horizontal, Desktop Vertical */}
+          <div className="lg:w-80 bg-white border-b lg:border-b-0 lg:border-r border-gray-200 p-4 lg:p-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4 hidden lg:block">
+              Seleccionar Proyecto
+            </h3>
+            
+            {/* Mobile/Tablet: Horizontal scroll */}
+            <div className="flex lg:hidden gap-3 overflow-x-auto pb-4 -mx-4 px-4">
+              {projects.map((project) => (
+                <button
+                  key={project.id}
+                  type="button"
+                  disabled={!!animating}
+                  className={`flex-shrink-0 group transition-all duration-300 ${
+                    selected === project.id
+                      ? "ring-2 ring-red-500 ring-offset-2"
+                      : "opacity-70 hover:opacity-100"
                   }`}
-                  style={{ minHeight: "60vh" }}
+                  onClick={() => handleCardClick(project.id)}
                 >
-                  {/* Texto si existe */}
-                  {image.caption && (
-                    <div className="w-[25vw] md:w-[25vw] text-left text-gray-800 text-base leading-relaxed max-w-xl">
-                      <p>{image.caption}</p>
-                    </div>
-                  )}
-              
-                  {/* Imagen */}
-                  <div className="w-full md:w-1/2 flex justify-center items-center">
+                  <div className="w-24 h-16 relative">
                     <img
-                      src={image.src}
-                      alt={`Image ${i + 1} of ${activeProject.name}`}
-                      className="w-auto h-auto max-w-[90vw] max-h-[60vh] object-contain"
+                      src={project.cover}
+                      alt={project.name}
+                      className={`w-full h-full object-cover rounded-lg ${
+                        animating === project.id ? "animate-fade-scale-in" : ""
+                      }`}
                     />
+                    <div className="absolute inset-0 bg-black/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <p className="text-xs font-medium text-gray-700 mt-1 text-center">
+                    {project.name}
+                  </p>
+                </button>
+              ))}
+            </div>
+
+            {/* Desktop: Vertical list */}
+            <div className="hidden lg:flex flex-col gap-3 max-h-[calc(100vh-200px)] overflow-y-auto">
+              {projects.map((project) => (
+                <button
+                  key={project.id}
+                  type="button"
+                  disabled={!!animating}
+                  className={`group text-left transition-all duration-300 rounded-lg p-3 ${
+                    selected === project.id
+                      ? "bg-red-50 ring-2 ring-red-500 ring-offset-2"
+                      : "hover:bg-gray-50"
+                  }`}
+                  onClick={() => handleCardClick(project.id)}
+                >
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={project.cover}
+                      alt={project.name}
+                      className={`w-16 h-12 object-cover rounded-md ${
+                        animating === project.id ? "animate-fade-scale-in" : ""
+                      }`}
+                    />
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-medium text-gray-900 truncate">
+                        {project.name}
+                      </h4>
+                      <p className="text-sm text-gray-500">
+                        {Array.isArray(activeProject.images) ? activeProject.images.length : 0} imágenes
+                      </p>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Main Content Area */}
+          <div className="flex-1 relative bg-gray-100">
+            {/* Project Info Header */}
+            <div className="bg-white border-b border-gray-200 p-4 lg:p-6">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <img
+                    src={activeProject.miniLogo}
+                    alt={`${activeProject.name} logo`}
+                    className="w-10 h-10 object-cover rounded-lg border border-gray-200"
+                  />
+                  <div>
+                    <h1 className="text-xl lg:text-2xl font-bold text-gray-900">
+                      {activeProject.name}
+                    </h1>
+                    <p className="text-sm text-gray-500">
+                      {currentSlide + 1} de {Array.isArray(activeProject.images) ? activeProject.images.length : 0}
+                    </p>
                   </div>
                 </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </div>
-    
-      {/* RIGHT PROJECT CARDS */}
-      <div className="flex flex-row md:flex-col gap-2 md:gap-4 p-2 md:p-4 w-full md:w-20 lg:w-56 border-t md:border-t-0 md:border-l border-gray-900 bg-white overflow-x-auto md:overflow-y-auto">
-        {projects.map((project) => (
-          <button
-            key={project.id}
-            type="button"
-            disabled={!!animating}
-            className={`group flex-shrink-0 rounded-lg transition-all ${
-              selected === project.id
-                ? "ring-2 ring-red-500"
-                : "opacity-70 hover:opacity-100"
-            }`}
-            onClick={() => handleCardClick(project.id)}
-          >
-            <div className="flex flex-col items-start md:items-center">
-              <img
-                src={project.cover}
-                alt={project.name}
-                className={`
-                  w-32 h-20 md:w-full md:h-20 object-cover rounded-md
-                  ${animating === project.id ? "animate-fade-scale-in" : ""}
-                `}
-              />
-              <div className="hidden md:flex items-center gap-2 mt-1 px-1">
-                <img
-                  src={project.miniLogo}
-                  alt={`${project.name} mini logo`}
-                  className="w-4 h-4 object-cover rounded-sm"
-                />
-                <span className="font-medium text-xs text-black">{project.name}</span>
+
+                {/* Navigation Controls */}
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={prevSlide}
+                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors disabled:opacity-50"
+                    disabled={currentSlide === 0}
+                  >
+                    <ChevronLeft size={20} />
+                  </button>
+                  <button
+                    onClick={nextSlide}
+                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors disabled:opacity-50"
+                    disabled={currentSlide === (Array.isArray(activeProject.images) ? activeProject.images.length - 1 : 0)}
+                  >
+                    <ChevronRight size={20} />
+                  </button>
+                </div>
               </div>
             </div>
-          </button>
-        ))}
+
+            {/* Image Slider */}
+            <div className="h-[calc(100vh-200px)] lg:h-[calc(100vh-160px)] relative">
+              <Swiper
+                ref={swiperRef}
+                slidesPerView={1}
+                spaceBetween={0}
+                onSlideChange={handleSlideChange}
+                className="w-full h-full"
+              >
+                {activeProject.images.map((img, i) => {
+                  const image = typeof img === "string" ? { src: img, caption: null } : img;
+
+                  return (
+                    <SwiperSlide key={i}>
+                      <div
+                        className={`relative w-full h-full flex flex-col lg:flex-row ${
+                          sliderAnimating ? "animate-fade-right-in" : ""
+                        }`}
+                      >
+                        {/* Image */}
+                        <div className="flex-1 flex items-center justify-center p-4 lg:p-8">
+                          <img
+                            src={image.src}
+                            alt={`Image ${i + 1} of ${activeProject.name}`}
+                            className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+                          />
+                        </div>
+
+                        {/* Caption */}
+                        {image.caption && (
+                          <div className="lg:w-80 bg-white/95 backdrop-blur-sm p-6 lg:p-8 border-t lg:border-t-0 lg:border-l border-gray-200">
+                            <div className="max-w-none lg:max-w-sm">
+                              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                                Descripción
+                              </h3>
+                              <p className="text-gray-700 leading-relaxed">
+                                {image.caption}
+                              </p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+
+              {/* Slide Indicators */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">
+                <div className="flex gap-2 bg-black/20 backdrop-blur-sm rounded-full px-3 py-2">
+                  {activeProject.images.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => swiperRef.current?.swiper.slideTo(i)}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        i === currentSlide ? "bg-white" : "bg-white/50"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
     </div>
   );
 };
