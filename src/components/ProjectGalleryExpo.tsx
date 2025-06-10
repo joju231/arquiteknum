@@ -211,82 +211,58 @@ const ProjectGalleryExpo: React.FC = () => {
         </div>
 
         {/* Gallery Layout */}
-        <div className="flex flex-col lg:flex-row min-h-screen">
-          {/* Project Cards - Mobile/Tablet Horizontal, Desktop Vertical */}
-          <div className="lg:w-80 xl:w-96 bg-white border-b lg:border-b-0 lg:border-r border-gray-200 p-3 md:p-4 lg:p-6">
-            <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4 hidden lg:block">
-              Seleccionar Proyecto
-            </h3>
-            
-            {/* Mobile/Tablet: Horizontal scroll */}
-            <div className="flex lg:hidden gap-2 md:gap-3 overflow-x-auto pb-3 md:pb-4 -mx-3 md:-mx-4 px-3 md:px-4 scrollbar-hide">
-              {projects.map((project) => (
-                <button
-                  key={project.id}
-                  type="button"
-                  disabled={!!animating}
-                  className={`flex-shrink-0 group transition-all duration-300 ${
-                    selected === project.id
-                      ? "ring-2 ring-red-500 ring-offset-2"
-                      : "opacity-70 hover:opacity-100"
-                  }`}
-                  onClick={() => handleCardClick(project.id)}
-                >
-                  <div className="w-20 h-14 md:w-24 md:h-16 relative">
-                    <img
-                      src={project.cover}
-                      alt={project.name}
-                      className={`w-full h-full object-cover rounded-md md:rounded-lg ${
-                        animating === project.id ? "animate-fade-scale-in" : ""
-                      }`}
-                    />
-                    <div className="absolute inset-0 bg-black/20 rounded-md md:rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                  <p className="text-xs font-medium text-gray-700 mt-1 text-center max-w-20 md:max-w-24 truncate">
-                    {project.name}
-                  </p>
-                </button>
-              ))}
-            </div>
-
-            {/* Desktop: Vertical list */}
-            <div className="hidden lg:flex flex-col gap-2 xl:gap-3 max-h-[calc(100vh-200px)] overflow-y-auto scrollbar-hide">
-              {projects.map((project) => (
-                <button
-                  key={project.id}
-                  type="button"
-                  disabled={!!animating}
-                  className={`group text-left transition-all duration-300 rounded-lg p-3 ${
-                    selected === project.id
-                      ? "bg-red-50 ring-2 ring-red-500 ring-offset-2"
-                      : "hover:bg-gray-50"
-                  }`}
-                  onClick={() => handleCardClick(project.id)}
-                >
-                  <div className="flex items-center gap-3">
-                    <img
-                      src={project.cover}
-                      alt={project.name}
-                      className={`w-14 h-10 xl:w-16 xl:h-12 object-cover rounded-md ${
-                        animating === project.id ? "animate-fade-scale-in" : ""
-                      }`}
-                    />
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-medium text-gray-900 truncate text-sm xl:text-base">
-                        {project.name}
-                      </h4>
-                      <p className="text-xs xl:text-sm text-gray-500">
-                        {Array.isArray(activeProject.images) ? activeProject.images.length : 0} imágenes
-                      </p>
-                    </div>
-                  </div>
-                </button>
-              ))}
+        <div className="flex min-h-screen">
+          {/* Left Vertical Text */}
+          <div className="hidden lg:flex w-16 bg-black items-center justify-center">
+            <div 
+              className="text-white font-bold text-xl tracking-[0.3em] select-none"
+              style={{ 
+                writingMode: 'vertical-rl',
+                textOrientation: 'mixed'
+              }}
+            >
+              ARQTKNM
             </div>
           </div>
 
           {/* Main Content Area */}
           <div className="flex-1 relative bg-gray-100">
+            {/* Mobile Project Cards - Top Bar */}
+            <div className="lg:hidden bg-white border-b border-gray-200 p-3 md:p-4">
+              <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">
+                Seleccionar Proyecto
+              </h3>
+              <div className="flex gap-2 md:gap-3 overflow-x-auto pb-3 md:pb-4 -mx-3 md:-mx-4 px-3 md:px-4 scrollbar-hide">
+                {projects.map((project) => (
+                  <button
+                    key={project.id}
+                    type="button"
+                    disabled={!!animating}
+                    className={`flex-shrink-0 group transition-all duration-300 ${
+                      selected === project.id
+                        ? "ring-2 ring-red-500 ring-offset-2"
+                        : "opacity-70 hover:opacity-100"
+                    }`}
+                    onClick={() => handleCardClick(project.id)}
+                  >
+                    <div className="w-20 h-14 md:w-24 md:h-16 relative">
+                      <img
+                        src={project.cover}
+                        alt={project.name}
+                        className={`w-full h-full object-cover rounded-md md:rounded-lg ${
+                          animating === project.id ? "animate-fade-scale-in" : ""
+                        }`}
+                      />
+                      <div className="absolute inset-0 bg-black/20 rounded-md md:rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                    <p className="text-xs font-medium text-gray-700 mt-1 text-center max-w-20 md:max-w-24 truncate">
+                      {project.name}
+                    </p>
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* Project Info Header */}
             <div className="bg-white border-b border-gray-200 p-3 md:p-4 lg:p-6">
               <div className="flex items-center justify-between">
@@ -387,6 +363,46 @@ const ProjectGalleryExpo: React.FC = () => {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Right Project Cards - Desktop Only */}
+          <div className="hidden lg:block w-80 xl:w-96 bg-white border-l border-gray-200 p-6">
+            <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">
+              Seleccionar Proyecto
+            </h3>
+            <div className="flex flex-col gap-2 xl:gap-3 max-h-[calc(100vh-200px)] overflow-y-auto scrollbar-hide">
+              {projects.map((project) => (
+                <button
+                  key={project.id}
+                  type="button"
+                  disabled={!!animating}
+                  className={`group text-left transition-all duration-300 rounded-lg p-3 ${
+                    selected === project.id
+                      ? "bg-red-50 ring-2 ring-red-500 ring-offset-2"
+                      : "hover:bg-gray-50"
+                  }`}
+                  onClick={() => handleCardClick(project.id)}
+                >
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={project.cover}
+                      alt={project.name}
+                      className={`w-14 h-10 xl:w-16 xl:h-12 object-cover rounded-md ${
+                        animating === project.id ? "animate-fade-scale-in" : ""
+                      }`}
+                    />
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-medium text-gray-900 truncate text-sm xl:text-base">
+                        {project.name}
+                      </h4>
+                      <p className="text-xs xl:text-sm text-gray-500">
+                        {Array.isArray(activeProject.images) ? activeProject.images.length : 0} imágenes
+                      </p>
+                    </div>
+                  </div>
+                </button>
+              ))}
             </div>
           </div>
         </div>
