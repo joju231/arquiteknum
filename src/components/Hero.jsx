@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button';
 
-const Hero: React.FC = () => {
+const Hero = () => {
   return (
     <section 
       id="home" 
