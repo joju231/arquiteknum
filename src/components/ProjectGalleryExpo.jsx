@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "./pop-animation.css"
-import "./fade-scale-in.css"
-import "./fade-right-in.css"
+import "../styles/pop-animation.css"
+import "../styles/fade-scale-in.css"
+import "../styles/fade-right-in.css"
 
 const ANIMATION_DURATION = 220;
 
