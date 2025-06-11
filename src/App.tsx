@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProjectGalleryExpo from './components/ProjectGalleryExpo';
+import ProjectGalleryExpo from './components/ProjectGalleryExpo.jsx';
 import About from './components/About';
 
 function App() {
