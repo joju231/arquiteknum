@@ -221,8 +221,8 @@ const ProjectGalleryExpo = () => {
             key={project.id}
             type="button"
             disabled={!!animating}
-            className={group rounded-lg overflow-visible shadow focus:outline-none transition-all flex-shrink-0 bg-transparent border-0
-              ${selected === project.id ? "ring-2 ring-red-500" : "opacity-70 hover:opacity-100"}
+            className={`group rounded-lg overflow-visible shadow focus:outline-none transition-all flex-shrink-0 bg-transparent border-0
+              ${selected === project.id ? "ring-2 ring-red-500" : "opacity-70 hover:opacity-100"}`
             }
             style={{ minHeight: "5.5rem" }}
             onClick={() => handleCardClick(project.id)}
