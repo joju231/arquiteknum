@@ -181,7 +181,7 @@ const ProjectGalleryExpo = () => {
         <div className="absolute top-4 left-4 z-20">
           <img
             src={activeProject.miniLogo}
-            alt={${activeProject.name} mini logo}
+            aalt={`Imagen de ${activeProject.name} mini logo`}
             className="w-10 h-10 object-cover rounded-md border border-gray-200 bg-white"
             style={{ background: "#eee" }}
           />
