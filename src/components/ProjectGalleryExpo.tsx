@@ -196,7 +196,7 @@ const ProjectGalleryExpo = () => {
             <SwiperSlide key={i}>
               <div
                 className={
-                  rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center  +
+                  `rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center`  +
                   (sliderAnimating ? "animate-fade-right-in" : "")
                 }
                 style={{
