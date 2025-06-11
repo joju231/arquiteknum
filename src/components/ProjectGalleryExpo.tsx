@@ -153,7 +153,10 @@ const ProjectGalleryExpo = () => {
   return (
   <>
     <Hero />
-    <div className="flex w-screen h-screen max-h-screen overflow-hidden min-h-0" style={{ fontFamily: "var(--main-font)" }}>
+    <div
+      className="flex w-screen h-screen max-h-screen overflow-hidden min-h-0"
+      style={{ fontFamily: "var(--main-font)" }}
+    >
       {/* LEFT BAR */}
       <div className="flex flex-col justify-center items-center w-16 bg-black border-r border-gray-900 shrink-0">
         <div className="flex flex-col items-center select-none">
@@ -221,7 +224,7 @@ const ProjectGalleryExpo = () => {
             className={`group rounded-lg overflow-visible shadow focus:outline-none transition-all flex-shrink-0 bg-transparent border-0
               ${selected === project.id ? "ring-2 ring-red-500" : "opacity-70 hover:opacity-100"}
             `}
-            style={{ minHeight: '5.5rem' }}
+            style={{ minHeight: "5.5rem" }}
             onClick={() => handleCardClick(project.id)}
             tabIndex={0}
           >
@@ -246,13 +249,15 @@ const ProjectGalleryExpo = () => {
                 className="w-5 h-5 object-cover rounded-sm"
                 style={{ background: "#eee" }}
               />
-              <span className="font-semibold text-sm text-black">{project.name}</span>
+              <span className="font-semibold text-sm text-black">
+                {project.name}
+              </span>
             </div>
           </button>
         ))}
       </div>
     </div>
   </>
-)};
+);
 
 export default ProjectGalleryExpo;
