@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import Button from './Button';
 
 const Hero = () => {
@@ -29,13 +30,15 @@ const Hero = () => {
           Transformamos visiones en espacios extraordinarios que inspiran, funcionan y perduran en el tiempo.
         </p>
         <div className="flex justify-center slide-up delay-400">
-          <Button 
+          <Link to="/about">
+            <Button 
             variant="outline" 
             size="lg"
             className="group"
           >
             Saber más
           </Button>
+          </Link>
         </div>
       </div>
     </section>
