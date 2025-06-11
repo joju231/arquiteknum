@@ -232,9 +232,9 @@ const ProjectGalleryExpo = () => {
               <img
                 src={project.cover}
                 alt={project.name}
-                className={
+                className={`
                   w-full h-16 md:h-32 object-cover rounded-md transition-transform
-                  ${animating === project.id ? "animate-fade-scale-in" : ""}
+                  ${animating === project.id ? "animate-fade-scale-in" : ""}`
                 }
                 style={{
                   pointerEvents: "none",
