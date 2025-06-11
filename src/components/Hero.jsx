@@ -34,7 +34,7 @@ const Hero = () => {
             size="lg"
             className="group"
           >
-            Contáctanos
+            Saber más
           </Button>
         </div>
       </div>
