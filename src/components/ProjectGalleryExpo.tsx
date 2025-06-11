@@ -205,7 +205,7 @@ const ProjectGalleryExpo = () => {
               >
                 <img
                   src={img}
-                  alt={Imagen ${i + 1} de ${activeProject.name}}
+                  alt={`Imagen ${i + 1} de ${activeProject.name}`}
                   className="w-auto h-auto max-w-[90vw] max-h-[75vh] object-contain"
                 />
               </div>
