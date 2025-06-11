@@ -245,7 +245,7 @@ const ProjectGalleryExpo = () => {
             <div className="p-2 bg-white text-left hidden md:flex items-center gap-2">
               <img
                 src={project.miniLogo}
-                alt={${project.name} mini logo}
+                alt={`${project.name} mini logo`}
                 className="w-5 h-5 object-cover rounded-sm"
                 style={{ background: "#eee" }}
               />
