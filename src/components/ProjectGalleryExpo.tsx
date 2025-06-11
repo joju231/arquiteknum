@@ -117,7 +117,7 @@ const projects = [
   },
 ];
 
-const ProjectGalleryExpo = () => {
+export default const ProjectGalleryExpo = () => {
   const [selected, setSelected] = useState(projects[0].id);
   const [animating, setAnimating] = useState(null);
   const [sliderAnimating, setSliderAnimating] = useState(false);
@@ -260,4 +260,3 @@ const ProjectGalleryExpo = () => {
   </>
 );
 
-export default ProjectGalleryExpo;
