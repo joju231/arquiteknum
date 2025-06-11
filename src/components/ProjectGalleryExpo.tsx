@@ -181,7 +181,7 @@ export default function ProjectGalleryExpo () {
         <div className="absolute top-4 left-4 z-20">
           <img
             src={activeProject.miniLogo}
-            aalt={`Imagen de ${activeProject.name} mini logo`}
+            alt={`Imagen de ${activeProject.name} mini logo`}
             className="w-10 h-10 object-cover rounded-md border border-gray-200 bg-white"
             style={{ background: "#eee" }}
           />
@@ -214,8 +214,8 @@ export default function ProjectGalleryExpo () {
         </Swiper>
       </div>
 
-      {/* RIGHT PROJECT CARDS */}
-      <div className="flex flex-col gap-4 p-2 md:p-4 w-20 md:w-56 border-l border-gray-900 shrink-0 bg-white overflow-y-auto h-full min-h-0">
+      {/* RIGHT PROJECT CARDS (Now always visible, no hiding on smaller screens) */}
+      <div className="flex flex-col gap-4 p-2 md:p-4 w-20 md:w-56 border-l border-gray-900 shrink-0 bg-white overflow-y-auto h-full min-h-0 md:block">
         {projects.map((project) => (
           <button
             key={project.id}
@@ -259,4 +259,3 @@ export default function ProjectGalleryExpo () {
     </div>
   </>
 )};
-
