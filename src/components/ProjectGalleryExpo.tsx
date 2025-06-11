@@ -253,6 +253,6 @@ const ProjectGalleryExpo = () => {
       </div>
     </div>
   </>
-);
+)};
 
 export default ProjectGalleryExpo;
