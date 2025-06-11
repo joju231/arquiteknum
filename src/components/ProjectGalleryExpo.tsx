@@ -128,15 +128,15 @@ const projects = [
   },
 ];
 
-const ProjectGalleryExpo = () => {
+const ProjectGalleryExpo: React.FC = () => {
   const [selected, setSelected] = useState(projects[0].id);
-  const [animating, setAnimating] = useState(null);
+  const [animating, setAnimating] = useState<number | null>(null);
   const [sliderAnimating, setSliderAnimating] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const swiperRef = useRef(null);
+  const swiperRef = useRef<any>(null);
 
-  const handleCardClick = (projectId) => {
+  const handleCardClick = (projectId: number) => {
     if (animating || selected === projectId) return;
     setAnimating(projectId);
     setTimeout(() => {
@@ -165,7 +165,7 @@ const ProjectGalleryExpo = () => {
 
   if (!activeProject) return null;
 
-  const handleSlideChange = (swiper) => {
+  const handleSlideChange = (swiper: any) => {
     setCurrentSlide(swiper.activeIndex);
   };
 
@@ -212,7 +212,7 @@ const ProjectGalleryExpo = () => {
 
         {/* Gallery Layout */}
         <div className="flex min-h-screen">
-          {/* Left Vertical Text - UNCHANGED */}
+          {/* Left Vertical Text */}
           <div className="hidden lg:flex w-16 bg-black items-center justify-center">
             <div 
               className="text-white font-bold text-xl tracking-[0.3em] select-none"
