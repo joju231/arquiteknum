@@ -158,7 +158,7 @@ export default function ProjectGalleryExpo () {
       style={{ fontFamily: "var(--main-font)" }}
     >
       {/* LEFT BAR */}
-      <div className="flex flex-col justify-center items-center w-16 bg-black border-r border-gray-900 shrink-0">
+      <div className="flex flex-col justify-center items-center w-16 bg-[#0a0a0a] border-r border-gray-900 shrink-0">
         <div className="flex flex-col items-center select-none">
           {Array.from("ARQTKNM").map((letter, idx) => (
             <span
