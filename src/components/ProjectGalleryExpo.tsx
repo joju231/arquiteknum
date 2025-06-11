@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import Hero from "./Hero.tsx"
 import "../styles/pop-animation.css"
 import "../styles/fade-scale-in.css"
 import "../styles/fade-right-in.css"
@@ -150,6 +151,7 @@ const ProjectGalleryExpo = () => {
   const activeProject = projects.find((p) => p.id === selected);
 
   return (
+    <Hero />
     <div className="flex w-screen h-screen max-h-screen overflow-hidden min-h-0" style={{ fontFamily: "var(--main-font)" }}>
       {/* LEFT BAR */}
       <div className="flex flex-col justify-center items-center w-16 bg-black border-r border-gray-900 shrink-0">
