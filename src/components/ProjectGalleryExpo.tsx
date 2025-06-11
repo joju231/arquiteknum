@@ -255,5 +255,4 @@ const ProjectGalleryExpo = () => {
   </>
 );
 
-
 export default ProjectGalleryExpo;
