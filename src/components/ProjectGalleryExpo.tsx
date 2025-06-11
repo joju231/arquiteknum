@@ -1,4 +1,156 @@
-return (
+import React, { useState, useEffect, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import Hero from "./Hero.jsx"
+import "../styles/pop-animation.css"
+import "../styles/fade-scale-in.css"
+import "../styles/fade-right-in.css"
+
+const ANIMATION_DURATION = 220;
+
+const projects = [
+  {
+    id: 1,
+    name: "Casa Lago",
+    cover: "https://placehold.co/300x200/EEE/31343C?text=Casa+Lago",
+    miniLogo: "https://placehold.co/20x20/EEE/31343C?text=CL",
+    images: [
+      "https://placehold.co/600x400/EEE/31343C?text=Casa+Lago+1",
+      "https://placehold.co/600x400/DDD/31343C?text=Casa+Lago+2",
+      "https://placehold.co/600x400/CCC/31343C?text=Casa+Lago+3",
+    ],
+  },
+  {
+    id: 2,
+    name: "Edificio Norte",
+    cover: "https://placehold.co/300x200/BBB/31343C?text=Edificio+Norte",
+    miniLogo: "https://placehold.co/20x20/BBB/31343C?text=EN",
+    images: [
+      "https://placehold.co/600x400/BBB/31343C?text=Edificio+Norte+1",
+      "https://placehold.co/600x400/AAA/31343C?text=Edificio+Norte+2",
+    ],
+  },
+  {
+    id: 3,
+    name: "Pabellón Sur",
+    cover: "https://placehold.co/300x200/CCC/31343C?text=Pabellón+Sur",
+    miniLogo: "https://placehold.co/20x20/CCC/31343C?text=PS",
+    images: [
+      "https://placehold.co/600x400/CCC/31343C?text=Pabellón+Sur+1",
+      "https://placehold.co/600x400/999/31343C?text=Pabellón+Sur+2",
+      "https://placehold.co/600x400/888/31343C?text=Pabellón+Sur+3",
+      "https://placehold.co/600x400/777/31343C?text=Pabellón+Sur+4",
+    ],
+  },
+  {
+    id: 4,
+    name: "Parque Central",
+    cover: "https://placehold.co/300x200/AAF/31343C?text=Parque+Central",
+    miniLogo: "https://placehold.co/20x20/AAF/31343C?text=PC",
+    images: [
+      "https://placehold.co/600x400/AAF/31343C?text=Parque+Central+1",
+      "https://placehold.co/600x400/44F/31343C?text=Parque+Central+2",
+    ],
+  },
+  {
+    id: 5,
+    name: "Torre Este",
+    cover: "https://placehold.co/300x200/FFA/31343C?text=Torre+Este",
+    miniLogo: "https://placehold.co/20x20/FFA/31343C?text=TE",
+    images: [
+      "https://placehold.co/600x400/FFA/31343C?text=Torre+Este+1",
+      "https://placehold.co/600x400/FA0/31343C?text=Torre+Este+2",
+    ],
+  },
+  {
+    id: 6,
+    name: "Jardines Urbanos",
+    cover: "https://placehold.co/300x200/0AF/31343C?text=Jardines+Urbanos",
+    miniLogo: "https://placehold.co/20x20/0AF/31343C?text=JU",
+    images: [
+      "https://placehold.co/600x400/0AF/31343C?text=Jardines+Urbanos+1",
+      "https://placehold.co/600x400/0AA/31343C?text=Jardines+Urbanos+2",
+      "https://placehold.co/600x400/0FF/31343C?text=Jardines+Urbanos+3",
+    ],
+  },
+  {
+    id: 7,
+    name: "Mirador Oeste",
+    cover: "https://placehold.co/300x200/F0A/31343C?text=Mirador+Oeste",
+    miniLogo: "https://placehold.co/20x20/F0A/31343C?text=MO",
+    images: [
+      "https://placehold.co/600x400/F0A/31343C?text=Mirador+Oeste+1",
+      "https://placehold.co/600x400/F00/31343C?text=Mirador+Oeste+2",
+    ],
+  },
+  {
+    id: 8,
+    name: "Residencial Delta",
+    cover: "https://placehold.co/300x200/0FA/31343C?text=Residencial+Delta",
+    miniLogo: "https://placehold.co/20x20/0FA/31343C?text=RD",
+    images: [
+      "https://placehold.co/600x400/0FA/31343C?text=Residencial+Delta+1",
+      "https://placehold.co/600x400/0A0/31343C?text=Residencial+Delta+2",
+      "https://placehold.co/600x400/0FF/31343C?text=Residencial+Delta+3",
+    ],
+  },
+  {
+    id: 9,
+    name: "Centro Cultural",
+    cover: "https://placehold.co/300x200/CFA/31343C?text=Centro+Cultural",
+    miniLogo: "https://placehold.co/20x20/CFA/31343C?text=CC",
+    images: [
+      "https://placehold.co/600x400/CFA/31343C?text=Centro+Cultural+1",
+      "https://placehold.co/600x400/CCC/31343C?text=Centro+Cultural+2",
+    ],
+  },
+  {
+    id: 10,
+    name: "Galería Río",
+    cover: "https://placehold.co/300x200/3AF/31343C?text=Galería+Río",
+    miniLogo: "https://placehold.co/20x20/3AF/31343C?text=GR",
+    images: [
+      "https://placehold.co/600x400/3AF/31343C?text=Galería+Río+1",
+      "https://placehold.co/600x400/3AA/31343C?text=Galería+Río+2",
+      "https://placehold.co/600x400/3FF/31343C?text=Galería+Río+3",
+    ],
+  },
+];
+
+const ProjectGalleryExpo = () => {
+  const [selected, setSelected] = useState(projects[0].id);
+  const [animating, setAnimating] = useState(null);
+  const [sliderAnimating, setSliderAnimating] = useState(false);
+
+  const swiperRef = useRef(null);
+
+  const handleCardClick = (projectId) => {
+    if (animating || selected === projectId) return;
+    setAnimating(projectId);
+    setTimeout(() => {
+      setSelected(projectId);
+      setAnimating(null);
+      setSliderAnimating(true);
+    }, ANIMATION_DURATION);
+  };
+
+  useEffect(() => {
+    if (sliderAnimating) {
+      const timer = setTimeout(() => setSliderAnimating(false), 360);
+      return () => clearTimeout(timer);
+    }
+  }, [sliderAnimating]);
+
+  // Always start from first slide on project change
+  useEffect(() => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideTo(0, 0); // instant, no animation
+    }
+  }, [selected]);
+
+  const activeProject = projects.find((p) => p.id === selected);
+
+  return (
   <>
     <Hero />
     <div
@@ -107,3 +259,5 @@ return (
     </div>
   </>
 );
+
+export default ProjectGalleryExpo;
