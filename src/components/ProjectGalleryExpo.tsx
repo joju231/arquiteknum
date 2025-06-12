@@ -122,9 +122,21 @@ export default function ProjectGalleryExpo () {
   const [animating, setAnimating] = useState(null);
   const [sliderAnimating, setSliderAnimating] = useState(false);
   const [sidebarVisible, setSidebarVisible] = useState(false);
-  const [sidebarWidth, setSidebarWidth] = useState(224); // Default width in pixels (w-56 = 224px)
+  const [sidebarWidth, setSidebarWidth] = useState(224);
   const [isResizing, setIsResizing] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const swiperRef = useRef(null);
+
+  // Check screen size
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const handleCardClick = (projectId) => {
     if (animating || selected === projectId) return;
@@ -133,6 +145,10 @@ export default function ProjectGalleryExpo () {
       setSelected(projectId);
       setAnimating(null);
       setSliderAnimating(true);
+      // Auto-hide sidebar on mobile after selection
+      if (isMobile) {
+        setSidebarVisible(false);
+      }
     }, ANIMATION_DURATION);
   };
 
@@ -149,19 +165,22 @@ export default function ProjectGalleryExpo () {
     }
   }, [selected]);
 
-  // Handle mouse events for resizing
+  // Handle mouse events for resizing (desktop only)
   const handleMouseDown = (e) => {
+    if (isMobile) return;
     e.preventDefault();
     setIsResizing(true);
   };
 
   useEffect(() => {
+    if (isMobile) return;
+    
     const handleMouseMove = (e) => {
       if (!isResizing) return;
       
       const newWidth = window.innerWidth - e.clientX;
-      const minWidth = 80; // Minimum width (w-20 = 80px)
-      const maxWidth = 400; // Maximum width
+      const minWidth = 80;
+      const maxWidth = 400;
       
       if (newWidth >= minWidth && newWidth <= maxWidth) {
         setSidebarWidth(newWidth);
@@ -185,7 +204,7 @@ export default function ProjectGalleryExpo () {
       document.body.style.cursor = '';
       document.body.style.userSelect = '';
     };
-  }, [isResizing]);
+  }, [isResizing, isMobile]);
 
   const activeProject = projects.find((p) => p.id === selected);
 
@@ -196,13 +215,13 @@ export default function ProjectGalleryExpo () {
         className="flex w-full h-screen max-h-screen overflow-hidden min-h-0"
         style={{ fontFamily: "var(--main-font)" }}
       >
-        {/* LEFT BAR */}
+        {/* LEFT BAR - Always visible and consistent */}
         <div className="flex flex-col justify-center items-center w-16 bg-[#0a0a0a] border-r border-gray-900 shrink-0">
           <div className="flex flex-col items-center select-none">
             {Array.from("ARQTKNM").map((letter, idx) => (
               <span
                 key={idx}
-                className="text-2xl font-bold text-red-500"
+                className="text-xl md:text-2xl font-bold text-red-500"
                 style={{
                   lineHeight: "2.6",
                   marginBottom: "0.25em",
@@ -217,14 +236,31 @@ export default function ProjectGalleryExpo () {
 
         {/* CENTER SLIDER */}
         <div className="flex-1 flex items-center justify-center px-2 md:px-8 bg-gray-100 min-h-0 min-w-0 relative">
+          {/* Mobile menu button */}
+          <button
+            className="absolute top-4 right-4 md:hidden p-3 bg-black/20 hover:bg-black/40 backdrop-blur-sm text-gray-900 rounded-full z-30 transition-all duration-300"
+            onClick={() => setSidebarVisible(!sidebarVisible)}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {sidebarVisible ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+
+          {/* Project mini logo */}
           <div className="absolute top-4 left-4 z-20">
             <img
               src={activeProject.miniLogo}
               alt={`Imagen de ${activeProject.name} mini logo`}
-              className="w-10 h-10 object-cover rounded-md border border-gray-200 bg-white"
+              className="w-8 h-8 md:w-10 md:h-10 object-cover rounded-md border border-gray-200 bg-white"
               style={{ background: "#eee" }}
             />
           </div>
+
+          {/* Image slider */}
           <Swiper
             ref={swiperRef}
             slidesPerView={1}
@@ -235,17 +271,20 @@ export default function ProjectGalleryExpo () {
               <SwiperSlide key={i}>
                 <div
                   className={
-                    `rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center`  +
-                    (sliderAnimating ? "animate-fade-right-in" : "")
+                    `rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center` +
+                    (sliderAnimating ? " animate-fade-right-in" : "")
                   }
                   style={{
-                    minHeight: "50vh",
+                    minHeight: isMobile ? "40vh" : "50vh",
                   }}
                 >
                   <img
                     src={img}
                     alt={`Imagen ${i + 1} de ${activeProject.name}`}
-                    className="w-auto h-auto max-w-full max-h-[75vh] object-contain"
+                    className="w-auto h-auto max-w-full object-contain"
+                    style={{
+                      maxHeight: isMobile ? "40vh" : "75vh"
+                    }}
                   />
                 </div>
               </SwiperSlide>
@@ -253,24 +292,45 @@ export default function ProjectGalleryExpo () {
           </Swiper>
         </div>
 
-        {/* RESIZE HANDLE */}
-        <div
-          className={`hidden md:block w-1 bg-gray-300 hover:bg-gray-400 cursor-col-resize transition-colors shrink-0 ${
-            isResizing ? 'bg-red-500' : ''
-          }`}
-          onMouseDown={handleMouseDown}
-          style={{ minHeight: '100%' }}
-        />
+        {/* RESIZE HANDLE - Desktop only */}
+        {!isMobile && (
+          <div
+            className={`w-1 bg-gray-300 hover:bg-gray-400 cursor-col-resize transition-colors shrink-0 ${
+              isResizing ? 'bg-red-500' : ''
+            }`}
+            onMouseDown={handleMouseDown}
+            style={{ minHeight: '100%' }}
+          />
+        )}
 
         {/* RIGHT PROJECT CARDS */}
         <div 
-          className={`flex flex-col gap-4 p-2 md:p-4 border-l border-gray-900 shrink-0 bg-white h-full min-h-0 scrollbar-hide overflow-y-auto ${
-            sidebarVisible ? 'block' : 'hidden md:block'
+          className={`flex flex-col gap-2 md:gap-4 p-2 md:p-4 border-l border-gray-900 shrink-0 bg-white h-full min-h-0 scrollbar-hide overflow-y-auto transition-transform duration-300 ease-in-out ${
+            isMobile 
+              ? `fixed top-0 right-0 z-40 shadow-2xl ${sidebarVisible ? 'translate-x-0' : 'translate-x-full'}`
+              : 'relative'
           }`}
           style={{ 
-            width: window.innerWidth >= 768 ? `${sidebarWidth}px` : sidebarWidth < 100 ? '80px' : '224px'
+            width: isMobile 
+              ? '280px' 
+              : `${sidebarWidth}px`
           }}
         >
+          {/* Mobile header */}
+          {isMobile && (
+            <div className="flex items-center justify-between p-2 border-b border-gray-200 mb-2">
+              <h3 className="font-semibold text-gray-900">Proyectos</h3>
+              <button
+                onClick={() => setSidebarVisible(false)}
+                className="p-2 hover:bg-gray-100 rounded-full"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          )}
+
           {projects.map((project) => (
             <button
               key={project.id}
@@ -279,7 +339,7 @@ export default function ProjectGalleryExpo () {
               className={`group rounded-lg overflow-visible shadow focus:outline-none transition-all flex-shrink-0 bg-transparent border-0
                 ${selected === project.id ? "ring-2 ring-red-500" : "opacity-70 hover:opacity-100"}`
               }
-              style={{ minHeight: "5.5rem" }}
+              style={{ minHeight: isMobile ? "4rem" : "5.5rem" }}
               onClick={() => handleCardClick(project.id)}
               tabIndex={0}
             >
@@ -288,24 +348,27 @@ export default function ProjectGalleryExpo () {
                   src={project.cover}
                   alt={project.name}
                   className={`
-                    w-full h-16 md:h-32 object-cover rounded-md transition-transform
-                    ${animating === project.id ? "animate-fade-scale-in" : ""}`
-                  }
+                    w-full object-cover rounded-md transition-transform
+                    ${animating === project.id ? "animate-fade-scale-in" : ""}
+                    ${isMobile ? "h-12" : "h-16 md:h-32"}
+                  `}
                   style={{
                     pointerEvents: "none",
                     willChange: "transform, opacity",
                   }}
                 />
               </div>
-              {sidebarWidth > 120 && (
-                <div className="p-2 bg-white text-left hidden md:flex items-center gap-2">
+              
+              {/* Project name - show on mobile or when sidebar is wide enough on desktop */}
+              {(isMobile || (!isMobile && sidebarWidth > 120)) && (
+                <div className="p-2 bg-white text-left flex items-center gap-2">
                   <img
                     src={project.miniLogo}
                     alt={`${project.name} mini logo`}
-                    className="w-5 h-5 object-cover rounded-sm"
+                    className="w-4 h-4 md:w-5 md:h-5 object-cover rounded-sm flex-shrink-0"
                     style={{ background: "#eee" }}
                   />
-                  <span className="font-semibold text-sm text-black truncate">
+                  <span className="font-semibold text-xs md:text-sm text-black truncate">
                     {project.name}
                   </span>
                 </div>
@@ -314,13 +377,13 @@ export default function ProjectGalleryExpo () {
           ))}
         </div>
 
-        {/* Button to toggle sidebar visibility on mobile */}
-        <button
-          className="absolute top-4 right-4 md:hidden p-2 bg-gray-800 text-white rounded-lg z-30"
-          onClick={() => setSidebarVisible(!sidebarVisible)}
-        >
-          {sidebarVisible ? "Cerrar" : "Abrir"} Menú
-        </button>
+        {/* Mobile overlay */}
+        {isMobile && sidebarVisible && (
+          <div 
+            className="fixed inset-0 bg-black/50 z-30"
+            onClick={() => setSidebarVisible(false)}
+          />
+        )}
       </div>
     </>
   );
