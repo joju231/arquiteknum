@@ -121,7 +121,9 @@ export default function ProjectGalleryExpo () {
   const [selected, setSelected] = useState(projects[0].id);
   const [animating, setAnimating] = useState(null);
   const [sliderAnimating, setSliderAnimating] = useState(false);
-  const [sidebarVisible, setSidebarVisible] = useState(false); // Estado para el sidebar en móviles
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+  const [sidebarWidth, setSidebarWidth] = useState(224); // Default width in pixels (w-56 = 224px)
+  const [isResizing, setIsResizing] = useState(false);
   const swiperRef = useRef(null);
 
   const handleCardClick = (projectId) => {
@@ -141,12 +143,49 @@ export default function ProjectGalleryExpo () {
     }
   }, [sliderAnimating]);
 
-  // Siempre empezar desde el primer slide cuando se cambie el proyecto
   useEffect(() => {
     if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideTo(0, 0); // instantáneo, sin animación
+      swiperRef.current.swiper.slideTo(0, 0);
     }
   }, [selected]);
+
+  // Handle mouse events for resizing
+  const handleMouseDown = (e) => {
+    e.preventDefault();
+    setIsResizing(true);
+  };
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (!isResizing) return;
+      
+      const newWidth = window.innerWidth - e.clientX;
+      const minWidth = 80; // Minimum width (w-20 = 80px)
+      const maxWidth = 400; // Maximum width
+      
+      if (newWidth >= minWidth && newWidth <= maxWidth) {
+        setSidebarWidth(newWidth);
+      }
+    };
+
+    const handleMouseUp = () => {
+      setIsResizing(false);
+    };
+
+    if (isResizing) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+      document.body.style.cursor = 'col-resize';
+      document.body.style.userSelect = 'none';
+    }
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    };
+  }, [isResizing]);
 
   const activeProject = projects.find((p) => p.id === selected);
 
@@ -214,8 +253,24 @@ export default function ProjectGalleryExpo () {
           </Swiper>
         </div>
 
+        {/* RESIZE HANDLE */}
+        <div
+          className={`hidden md:block w-1 bg-gray-300 hover:bg-gray-400 cursor-col-resize transition-colors shrink-0 ${
+            isResizing ? 'bg-red-500' : ''
+          }`}
+          onMouseDown={handleMouseDown}
+          style={{ minHeight: '100%' }}
+        />
+
         {/* RIGHT PROJECT CARDS */}
-        <div className={`flex flex-col gap-4 p-2 md:p-4 w-20 md:w-56 border-l border-gray-900 shrink-0 bg-white overflow-y-auto h-full min-h-0 ${sidebarVisible ? 'block' : 'hidden md:block'}`}>
+        <div 
+          className={`flex flex-col gap-4 p-2 md:p-4 border-l border-gray-900 shrink-0 bg-white h-full min-h-0 scrollbar-hide overflow-y-auto ${
+            sidebarVisible ? 'block' : 'hidden md:block'
+          }`}
+          style={{ 
+            width: window.innerWidth >= 768 ? `${sidebarWidth}px` : sidebarWidth < 100 ? '80px' : '224px'
+          }}
+        >
           {projects.map((project) => (
             <button
               key={project.id}
@@ -242,17 +297,19 @@ export default function ProjectGalleryExpo () {
                   }}
                 />
               </div>
-              <div className="p-2 bg-white text-left hidden md:flex items-center gap-2">
-                <img
-                  src={project.miniLogo}
-                  alt={`${project.name} mini logo`}
-                  className="w-5 h-5 object-cover rounded-sm"
-                  style={{ background: "#eee" }}
-                />
-                <span className="font-semibold text-sm text-black">
-                  {project.name}
-                </span>
-              </div>
+              {sidebarWidth > 120 && (
+                <div className="p-2 bg-white text-left hidden md:flex items-center gap-2">
+                  <img
+                    src={project.miniLogo}
+                    alt={`${project.name} mini logo`}
+                    className="w-5 h-5 object-cover rounded-sm"
+                    style={{ background: "#eee" }}
+                  />
+                  <span className="font-semibold text-sm text-black truncate">
+                    {project.name}
+                  </span>
+                </div>
+              )}
             </button>
           ))}
         </div>

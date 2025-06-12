@@ -168,4 +168,22 @@ html, body {
 .hide-scrollbar::-webkit-scrollbar,
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+    }
+
+/* Custom scrollbar styles for better UX when needed */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
 }
