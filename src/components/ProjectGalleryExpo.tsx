@@ -154,7 +154,7 @@ export default function ProjectGalleryExpo () {
     <>
       <Hero />
       <div
-        className="flex w-screen h-screen max-h-screen overflow-hidden min-h-0"
+        className="flex w-full h-screen max-h-screen overflow-hidden min-h-0"
         style={{ fontFamily: "var(--main-font)" }}
       >
         {/* LEFT BAR */}
@@ -177,7 +177,7 @@ export default function ProjectGalleryExpo () {
         </div>
 
         {/* CENTER SLIDER */}
-        <div className="flex-1 flex items-center justify-center px-2 md:px-8 bg-gray-100 min-h-0 relative">
+        <div className="flex-1 flex items-center justify-center px-2 md:px-8 bg-gray-100 min-h-0 min-w-0 relative">
           <div className="absolute top-4 left-4 z-20">
             <img
               src={activeProject.miniLogo}
@@ -206,7 +206,7 @@ export default function ProjectGalleryExpo () {
                   <img
                     src={img}
                     alt={`Imagen ${i + 1} de ${activeProject.name}`}
-                    className="w-auto h-auto max-w-[90vw] max-h-[75vh] object-contain"
+                    className="w-auto h-auto max-w-full max-h-[75vh] object-contain"
                   />
                 </div>
               </SwiperSlide>
@@ -259,7 +259,7 @@ export default function ProjectGalleryExpo () {
 
         {/* Button to toggle sidebar visibility on mobile */}
         <button
-          className="absolute top-4 right-4 md:hidden p-2 bg-gray-800 text-white rounded-lg"
+          className="absolute top-4 right-4 md:hidden p-2 bg-gray-800 text-white rounded-lg z-30"
           onClick={() => setSidebarVisible(!sidebarVisible)}
         >
           {sidebarVisible ? "Cerrar" : "Abrir"} Menú
