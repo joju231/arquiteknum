@@ -232,7 +232,7 @@ export default function ProjectGalleryExpo () {
                 className="text-xl md:text-2xl font-bold text-red-500"
                 style={{
                   lineHeight: "2.6",
-                  marginBottom: "0.25em",
+                  marginBottom: "0.12em",
                   userSelect: "none",
                   textShadow: `
                     0 0 10px rgba(220, 38, 38, 0.8),
