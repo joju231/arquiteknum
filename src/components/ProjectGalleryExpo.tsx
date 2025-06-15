@@ -209,7 +209,7 @@ export default function ProjectGalleryExpo () {
   const activeProject = projects.find((p) => p.id === selected);
 
   return (
-    <div className="relative">
+    <div className="h-screen">
       <Hero />
       
       {/* Enhanced smooth transition overlay with multiple gradients */}
