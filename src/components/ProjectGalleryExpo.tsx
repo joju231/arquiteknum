@@ -213,15 +213,9 @@ export default function ProjectGalleryExpo () {
       <Hero />
 
 
-      
-      {/* Enhanced smooth transition overlay with multiple gradients */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 z-10 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-100 via-gray-100/80 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-100/90 to-transparent"></div>
-      </div>
-
-      <div className="h-32 w-full bg-gradient-to-b from-black/0 to-black" />
-      
+      <div className="relative w-full h-24 overflow-hidden z-10">
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      </div>   
       <div
         className="flex w-full h-screen max-h-screen overflow-hidden min-h-0 relative z-20"
         style={{ 
