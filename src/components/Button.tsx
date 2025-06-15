@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   type = 'button',
 }) => {
-  const baseStyles = 'font-medium transition-all duration-300 inline-flex items-center justify-center';
+  const baseStyles = 'font-medium transition-all duration-300 inline-flex items-center justify-center font-secondary';
   
   const variantStyles = {
     primary: 'bg-red-600 hover:bg-red-700 text-white',

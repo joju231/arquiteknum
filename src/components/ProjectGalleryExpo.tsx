@@ -209,13 +209,13 @@ export default function ProjectGalleryExpo () {
   const activeProject = projects.find((p) => p.id === selected);
 
   return (
-    <div className="relative">
+    <div className="relative font-body">
       <Hero />
 
       <div
         className="flex w-full h-screen max-h-screen overflow-hidden min-h-0 relative z-20"
         style={{ 
-          fontFamily: "var(--main-font)",
+          fontFamily: "var(--font-body)",
         }}
       >
         {/* LEFT BAR - Always visible and consistent with enhanced shadows */}
@@ -224,7 +224,7 @@ export default function ProjectGalleryExpo () {
             {Array.from("ARQUITEKNUM").map((letter, idx) => (
               <span
                 key={idx}
-                className="text-xl md:text-2xl font-bold text-red-500"
+                className="text-xl md:text-2xl font-bold text-red-500 font-primary"
                 style={{
                   lineHeight: "2.6",
                   marginBottom: "0.14em",
@@ -322,7 +322,7 @@ export default function ProjectGalleryExpo () {
           {/* Mobile header */}
           {isMobile && (
             <div className="flex items-center justify-between p-2 border-b border-gray-200 mb-2">
-              <h3 className="font-semibold text-gray-900">Proyectos</h3>
+              <h3 className="font-semibold text-gray-900 font-secondary">Proyectos</h3>
               <button
                 onClick={() => setSidebarVisible(false)}
                 className="p-2 hover:bg-gray-100 rounded-full"
@@ -371,7 +371,7 @@ export default function ProjectGalleryExpo () {
                     className="w-4 h-4 md:w-5 md:h-5 object-cover rounded-sm flex-shrink-0"
                     style={{ background: "#eee" }}
                   />
-                  <span className="font-semibold text-xs md:text-sm text-black truncate">
+                  <span className="font-semibold text-xs md:text-sm text-black truncate font-secondary">
                     {project.name}
                   </span>
                 </div>

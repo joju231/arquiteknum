@@ -14,8 +14,8 @@ interface StatProps {
 const Stat: React.FC<StatProps> = ({ value, label, icon }) => (
   <div className="flex flex-col items-center p-6 border-r last:border-r-0 border-gray-200">
     <div className="text-red-600 mb-2">{icon}</div>
-    <div className="text-3xl font-bold mb-1">{value}</div>
-    <div className="text-gray-500 text-sm uppercase tracking-wide">{label}</div>
+    <div className="text-3xl font-bold mb-1 font-primary">{value}</div>
+    <div className="text-gray-500 text-sm uppercase tracking-wide font-secondary font-medium">{label}</div>
   </div>
 );
 
@@ -31,8 +31,8 @@ const ServiceCard: React.FC<ServiceProps> = ({ title, description, icon }) => {
       <div className="p-3 bg-red-50 rounded-lg inline-flex mb-4 text-red-600">
         {icon}
       </div>
-      <h3 className="text-lg font-bold mb-3 text-gray-900">{title}</h3>
-      <p className="text-gray-600 leading-relaxed flex-grow text-sm">{description}</p>
+      <h3 className="text-lg font-bold mb-3 text-gray-900 font-primary">{title}</h3>
+      <p className="text-gray-600 leading-relaxed flex-grow text-sm font-light">{description}</p>
     </div>
   );
 };
@@ -55,9 +55,9 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, bio, image }) => {
         />
       </div>
       <div className="p-4">
-        <h3 className="text-lg font-bold text-gray-900">{name}</h3>
-        <p className="text-red-600 font-medium text-sm">{role}</p>
-        <p className="text-gray-600 text-sm mt-2">{bio}</p>
+        <h3 className="text-lg font-bold text-gray-900 font-primary">{name}</h3>
+        <p className="text-red-600 font-medium text-sm font-secondary">{role}</p>
+        <p className="text-gray-600 text-sm mt-2 font-light">{bio}</p>
       </div>
     </div>
   );
@@ -104,7 +104,7 @@ const teamMembers: TeamMemberProps[] = [
 
 const About: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-body">
       {/* Back to Gallery Button */}
       <Link
         to="/"
@@ -112,7 +112,7 @@ const About: React.FC = () => {
         aria-label="Back to Gallery"
       >
         <ArrowLeft size={20} />
-        <span className="absolute left-full ml-3 top-1/2 -translate-y-1/2 bg-black/80 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+        <span className="absolute left-full ml-3 top-1/2 -translate-y-1/2 bg-black/80 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-light">
           Gallery
         </span>
       </Link>
@@ -123,9 +123,9 @@ const About: React.FC = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-6">
               <Logo className="text-red-600" size={32} />
-              <h1 className="text-3xl md:text-4xl font-bold">ARQUITEKNUM</h1>
+              <h1 className="text-3xl md:text-4xl font-bold font-primary">ARQUITEKNUM</h1>
             </div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
               Transformamos visiones en espacios extraordinarios que inspiran, funcionan y perduran en el tiempo.
             </p>
           </div>
@@ -152,17 +152,17 @@ const About: React.FC = () => {
           {/* About Content */}
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div className="space-y-6">
-              <h2 className="text-2xl md:text-3xl font-bold">Nuestra Visión</h2>
-              <p className="text-gray-600">
+              <h2 className="text-2xl md:text-3xl font-bold font-primary">Nuestra Visión</h2>
+              <p className="text-gray-600 font-light leading-relaxed">
                 Durante más de dos décadas, hemos estado dando forma a horizontes y transformando comunidades a través del diseño arquitectónico innovador. Nuestro compromiso con la excelencia, la sostenibilidad y la satisfacción del cliente nos ha establecido como líderes en la industria.
               </p>
-              <p className="text-gray-600">
+              <p className="text-gray-600 font-light leading-relaxed">
                 Creemos que la arquitectura es más que solo edificios; se trata de crear entornos que mejoren la experiencia humana y fomenten la comunidad. Nuestros diseños equilibran la belleza estética con la funcionalidad práctica.
               </p>
               <div className="grid grid-cols-2 gap-4 pt-4">
                 <div>
-                  <h4 className="font-semibold mb-2">Nuestro Enfoque</h4>
-                  <ul className="text-gray-600 space-y-1 text-sm">
+                  <h4 className="font-semibold mb-2 font-secondary">Nuestro Enfoque</h4>
+                  <ul className="text-gray-600 space-y-1 text-sm font-light">
                     <li className="flex items-center">
                       <span className="w-2 h-2 bg-red-600 rounded-full mr-2"></span>
                       Diseño Sostenible
@@ -178,8 +178,8 @@ const About: React.FC = () => {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">Nuestros Valores</h4>
-                  <ul className="text-gray-600 space-y-1 text-sm">
+                  <h4 className="font-semibold mb-2 font-secondary">Nuestros Valores</h4>
+                  <ul className="text-gray-600 space-y-1 text-sm font-light">
                     <li className="flex items-center">
                       <span className="w-2 h-2 bg-red-600 rounded-full mr-2"></span>
                       Artesanía Meticulosa
@@ -210,7 +210,7 @@ const About: React.FC = () => {
 
           {/* Services */}
           <div className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Nuestros Servicios</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 font-primary">Nuestros Servicios</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {services.map((service, index) => (
                 <ServiceCard
@@ -225,7 +225,7 @@ const About: React.FC = () => {
 
           {/* Team */}
           <div className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Nuestro Equipo</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 font-primary">Nuestro Equipo</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {teamMembers.map((member, index) => (
                 <TeamMember
@@ -243,8 +243,8 @@ const About: React.FC = () => {
           <div className="bg-gray-50 rounded-2xl p-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-6">Contacta con Nosotros</h2>
-                <p className="text-gray-600 mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 font-primary">Contacta con Nosotros</h2>
+                <p className="text-gray-600 mb-6 font-light leading-relaxed">
                   ¿Listo para comenzar tu proyecto? Contáctanos para programar una consulta y discutir cómo podemos dar vida a tu visión.
                 </p>
                 <div className="space-y-4">
@@ -253,8 +253,8 @@ const About: React.FC = () => {
                       <MapPin size={20} />
                     </div>
                     <div>
-                      <p className="font-semibold">Ubicación</p>
-                      <p className="text-gray-600 text-sm">Calle Gran Vía 123, Madrid, España</p>
+                      <p className="font-semibold font-secondary">Ubicación</p>
+                      <p className="text-gray-600 text-sm font-light">Calle Gran Vía 123, Madrid, España</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
@@ -262,8 +262,8 @@ const About: React.FC = () => {
                       <Mail size={20} />
                     </div>
                     <div>
-                      <p className="font-semibold">Email</p>
-                      <a href="mailto:info@arquiteknum.es" className="text-gray-600 text-sm hover:text-red-600">
+                      <p className="font-semibold font-secondary">Email</p>
+                      <a href="mailto:info@arquiteknum.es" className="text-gray-600 text-sm hover:text-red-600 font-light">
                         info@arquiteknum.es
                       </a>
                     </div>
@@ -273,8 +273,8 @@ const About: React.FC = () => {
                       <Phone size={20} />
                     </div>
                     <div>
-                      <p className="font-semibold">Teléfono</p>
-                      <a href="tel:+34911234567" className="text-gray-600 text-sm hover:text-red-600">
+                      <p className="font-semibold font-secondary">Teléfono</p>
+                      <a href="tel:+34911234567" className="text-gray-600 text-sm hover:text-red-600 font-light">
                         +34 91 123 45 67
                       </a>
                     </div>
@@ -283,7 +283,7 @@ const About: React.FC = () => {
               </div>
               
               <div>
-                <h3 className="text-xl font-bold mb-4">Síguenos</h3>
+                <h3 className="text-xl font-bold mb-4 font-secondary">Síguenos</h3>
                 <div className="flex space-x-4 mb-6">
                   <a href="#" className="bg-gray-200 p-3 rounded-full hover:bg-red-600 hover:text-white transition-colors">
                     <Instagram size={20} />
@@ -300,8 +300,8 @@ const About: React.FC = () => {
                 </div>
                 
                 <div className="bg-white p-6 rounded-lg border border-gray-200">
-                  <h4 className="font-semibold mb-3">Horarios de Oficina</h4>
-                  <div className="space-y-2 text-sm text-gray-600">
+                  <h4 className="font-semibold mb-3 font-secondary">Horarios de Oficina</h4>
+                  <div className="space-y-2 text-sm text-gray-600 font-light">
                     <div className="flex justify-between">
                       <span>Lunes - Viernes</span>
                       <span>9:00 - 18:00</span>
@@ -322,7 +322,7 @@ const About: React.FC = () => {
 
           {/* Footer */}
           <div className="mt-12 pt-8 border-t border-gray-200 text-center">
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 text-sm font-light">
               © {new Date().getFullYear()} ARQUITEKNUM. Todos los derechos reservados.
             </p>
           </div>

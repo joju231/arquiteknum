@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative w-full h-screen flex items-center justify-center bg-black overflow-hidden border-black border-2"
+      className="relative w-full h-screen flex items-center justify-center bg-black overflow-hidden"
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0 scale-in">
@@ -24,13 +24,13 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-20 text-center px-4 sm:px-6 max-w-5xl mx-auto">
-        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
-          <span className="block slide-up">Diseño Innovador.</span>
-          <span className="block slide-up delay-200">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight font-primary">
+          <span className="block slide-up font-light">Diseño Innovador.</span>
+          <span className="block slide-up delay-200 font-extrabold">
             Arquitectura <span className="text-red-600">Española</span>.
           </span>
         </h1>
-        <p className="text-lg md:text-xl text-gray-100 mb-8 max-w-3xl mx-auto leading-relaxed slide-up delay-300">
+        <p className="text-lg md:text-xl text-gray-100 mb-8 max-w-3xl mx-auto leading-relaxed slide-up delay-300 font-light font-weight-300">
           Transformamos visiones en espacios extraordinarios que inspiran, funcionan y perduran en el tiempo.
         </p>
         <div className="flex justify-center slide-up delay-400">
@@ -38,7 +38,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="group"
+              className="group font-secondary font-medium"
             >
               Saber más
             </Button>
