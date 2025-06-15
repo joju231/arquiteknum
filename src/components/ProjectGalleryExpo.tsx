@@ -216,7 +216,7 @@ export default function ProjectGalleryExpo () {
       
 
 
-      <div className="h-16 w-full bg-gradient-to-b from-white/0 to-white dark:from-black/0 dark:to-black" />
+      <div className="h-16 w-full bg-gradient-to-b from-black/0 to-black" />
       
       <div
         className="flex w-full h-screen max-h-screen overflow-hidden min-h-0 relative z-20"
