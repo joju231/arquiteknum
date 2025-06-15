@@ -211,7 +211,7 @@ export default function ProjectGalleryExpo () {
 
   return (
     <div className="relative font-body">
-      <Navbar fixed={true} />
+      <Navbar />
       <Hero />
 
       <div

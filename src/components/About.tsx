@@ -117,7 +117,7 @@ const About: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white font-body">
-      <Navbar fixed={false} />
+      <Navbar />
       
       {/* Back to Gallery Button */}
       <Link
@@ -131,7 +131,7 @@ const About: React.FC = () => {
         </span>
       </Link>
 
-      <div className="py-12">
+      <div className="py-12 pt-20">
         {/* Hero Section */}
         <Container>
           <div className="text-center mb-16">
