@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-[100vh] flex items-center justify-center bg-black overflow-hidden"
+      className="relative h-full flex items-center justify-center bg-black overflow-hidden"
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0 scale-in">
