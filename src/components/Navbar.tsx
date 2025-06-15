@@ -48,11 +48,7 @@ const Navbar: React.FC = () => {
             
             <Link
               to="/about"
-              className={`text-sm font-medium transition-colors font-secondary ${
-                location.pathname === '/about' 
-                  ? 'text-red-500' 
-                  : 'text-white/90 hover:text-white'
-              }`}
+              className={`text-sm font-medium transition-colors font-secondary}
             >
               Sobre nosotros
             </Link>
