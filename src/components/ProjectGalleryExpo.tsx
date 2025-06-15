@@ -211,6 +211,8 @@ export default function ProjectGalleryExpo () {
   return (
     <div className="relative">
       <Hero />
+
+      <div className="h-16 w-full bg-gradient-to-b from-white/0 to-white dark:from-black/0 dark:to-black" />
       
       {/* Enhanced smooth transition overlay with multiple gradients */}
       <div className="absolute bottom-0 left-0 right-0 h-40 z-10 pointer-events-none">
