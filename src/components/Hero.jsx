@@ -13,7 +13,7 @@ const Hero = () => {
         <img
           src="https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg"
           alt="Arquitectura moderna española"
-          className="w-full h-full object-cover opacity-50"
+          className="w-full min-h-full object-cover opacity-50"
         />
       </div>
       
