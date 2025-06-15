@@ -220,7 +220,7 @@ export default function ProjectGalleryExpo () {
         <div className="absolute inset-0 bg-gradient-to-t from-gray-100/90 to-transparent"></div>
       </div>
 
-      <div className="h-16 w-full bg-gradient-to-b from-black/0 to-black" />
+      <div className="h-24 w-full bg-gradient-to-b from-black/0 to-black" />
       
       <div
         className="flex w-full h-screen max-h-screen overflow-hidden min-h-0 relative z-20"
