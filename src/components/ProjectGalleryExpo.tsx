@@ -228,8 +228,7 @@ export default function ProjectGalleryExpo () {
                 style={{
                   lineHeight: "2.6",
                   marginBottom: "0.14em",
-                  userSelect: "none",
-                  filter: "drop-shadow(0 0 8px rgba(220, 38, 38, 0.7))"
+                  userSelect: "none"
                 }}
               >
                 {letter}
