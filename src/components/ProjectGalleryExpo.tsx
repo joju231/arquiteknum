@@ -225,7 +225,7 @@ export default function ProjectGalleryExpo () {
         }}
       >
         {/* LEFT BAR - Always visible and consistent with enhanced shadows */}
-        <div className="flex flex-col justify-center items-center w-16 bg-[#0a0a0a] border-r border-gray-900 shrink-0">
+        <div className="flex flex-col justify-center items-center w-16 bg-[#030103] border-r border-gray-900 shrink-0">
           <div className="flex flex-col items-center select-none">
             {Array.from("ARQTKNM").map((letter, idx) => (
               <span
