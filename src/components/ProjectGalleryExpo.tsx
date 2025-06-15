@@ -234,13 +234,6 @@ export default function ProjectGalleryExpo () {
                   lineHeight: "2.6",
                   marginBottom: "0.12em",
                   userSelect: "none",
-                  textShadow: `
-                    0 0 10px rgba(220, 38, 38, 0.8),
-                    0 0 20px rgba(220, 38, 38, 0.6),
-                    0 0 30px rgba(220, 38, 38, 0.4),
-                    2px 2px 4px rgba(0, 0, 0, 0.8),
-                    0 0 2px rgba(255, 255, 255, 0.3)
-                  `,
                   filter: "drop-shadow(0 0 8px rgba(220, 38, 38, 0.7))"
                 }}
               >
