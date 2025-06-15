@@ -209,11 +209,18 @@ export default function ProjectGalleryExpo () {
   const activeProject = projects.find((p) => p.id === selected);
 
   return (
-    <>
+    <div className="relative">
       <Hero />
+      
+      {/* Smooth transition overlay */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-100 to-transparent z-10 pointer-events-none"></div>
+      
       <div
-        className="flex w-full h-screen max-h-screen overflow-hidden min-h-0"
-        style={{ fontFamily: "var(--main-font)" }}
+        className="flex w-full h-screen max-h-screen overflow-hidden min-h-0 relative z-20"
+        style={{ 
+          fontFamily: "var(--main-font)",
+          marginTop: "-2rem" // Slight overlap for seamless transition
+        }}
       >
         {/* LEFT BAR - Always visible and consistent */}
         <div className="flex flex-col justify-center items-center w-16 bg-[#0a0a0a] border-r border-gray-900 shrink-0">
@@ -385,6 +392,6 @@ export default function ProjectGalleryExpo () {
           />
         )}
       </div>
-    </>
+    </div>
   );
 }
