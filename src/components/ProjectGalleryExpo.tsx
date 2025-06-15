@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Hero from "./Hero.jsx"
+import Navbar from "./Navbar";
 import "../styles/pop-animation.css"
 import "../styles/fade-scale-in.css"
 import "../styles/fade-right-in.css"
@@ -210,6 +211,7 @@ export default function ProjectGalleryExpo () {
 
   return (
     <div className="relative font-body">
+      <Navbar />
       <Hero />
 
       <div

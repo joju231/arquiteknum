@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Container from './Container';
-import Hero from './Hero.tsx'
+import Navbar from './Navbar';
 import { Award, Home, Users, Mail, Phone, MapPin, Instagram, Twitter, Facebook, Linkedin, ArrowLeft } from 'lucide-react';
 import Logo from './Logo';
 
@@ -103,12 +103,26 @@ const teamMembers: TeamMemberProps[] = [
 ];
 
 const About: React.FC = () => {
+  // Handle hash navigation for contact section
+  useEffect(() => {
+    if (window.location.hash === '#contact') {
+      setTimeout(() => {
+        const contactSection = document.querySelector('#contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white font-body">
+      <Navbar />
+      
       {/* Back to Gallery Button */}
       <Link
         to="/"
-        className="fixed top-6 left-6 z-40 bg-black/20 hover:bg-black/40 backdrop-blur-sm text-gray-900 p-3 rounded-full transition-all duration-300 hover:scale-110 group"
+        className="fixed top-20 left-6 z-40 bg-black/20 hover:bg-black/40 backdrop-blur-sm text-gray-900 p-3 rounded-full transition-all duration-300 hover:scale-110 group"
         aria-label="Back to Gallery"
       >
         <ArrowLeft size={20} />
@@ -117,7 +131,7 @@ const About: React.FC = () => {
         </span>
       </Link>
 
-      <div className="py-12">
+      <div className="py-12 pt-24">
         {/* Hero Section */}
         <Container>
           <div className="text-center mb-16">
@@ -240,7 +254,7 @@ const About: React.FC = () => {
           </div>
 
           {/* Contact */}
-          <div className="bg-gray-50 rounded-2xl p-8">
+          <div id="contact" className="bg-gray-50 rounded-2xl p-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-6 font-primary">Contacta con Nosotros</h2>
