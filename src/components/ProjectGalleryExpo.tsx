@@ -218,7 +218,6 @@ export default function ProjectGalleryExpo () {
         className="flex w-full h-screen max-h-screen overflow-hidden min-h-0 relative z-20"
         style={{ 
           fontFamily: "var(--main-font)",
-          marginTop: "-3rem" // Increased overlap for seamless transition
         }}
       >
         {/* LEFT BAR - Always visible and consistent with enhanced shadows */}
