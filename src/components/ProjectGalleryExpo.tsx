@@ -212,17 +212,20 @@ export default function ProjectGalleryExpo () {
     <div className="relative">
       <Hero />
       
-      {/* Smooth transition overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-100 to-transparent z-10 pointer-events-none"></div>
+      {/* Enhanced smooth transition overlay with multiple gradients */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 z-10 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-100 via-gray-100/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-100/90 to-transparent"></div>
+      </div>
       
       <div
         className="flex w-full h-screen max-h-screen overflow-hidden min-h-0 relative z-20"
         style={{ 
           fontFamily: "var(--main-font)",
-          marginTop: "-2rem" // Slight overlap for seamless transition
+          marginTop: "-3rem" // Increased overlap for seamless transition
         }}
       >
-        {/* LEFT BAR - Always visible and consistent */}
+        {/* LEFT BAR - Always visible and consistent with enhanced shadows */}
         <div className="flex flex-col justify-center items-center w-16 bg-[#0a0a0a] border-r border-gray-900 shrink-0">
           <div className="flex flex-col items-center select-none">
             {Array.from("ARQTKNM").map((letter, idx) => (
@@ -233,6 +236,14 @@ export default function ProjectGalleryExpo () {
                   lineHeight: "2.6",
                   marginBottom: "0.25em",
                   userSelect: "none",
+                  textShadow: `
+                    0 0 10px rgba(220, 38, 38, 0.8),
+                    0 0 20px rgba(220, 38, 38, 0.6),
+                    0 0 30px rgba(220, 38, 38, 0.4),
+                    2px 2px 4px rgba(0, 0, 0, 0.8),
+                    0 0 2px rgba(255, 255, 255, 0.3)
+                  `,
+                  filter: "drop-shadow(0 0 8px rgba(220, 38, 38, 0.7))"
                 }}
               >
                 {letter}

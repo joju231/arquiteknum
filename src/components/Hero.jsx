@@ -13,12 +13,15 @@ const Hero = () => {
         <img
           src="https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg"
           alt="Arquitectura moderna española"
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-50"
         />
       </div>
       
-      {/* Overlay Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30 z-10"></div>
+      {/* Enhanced Multi-layer Overlay Gradients */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/40 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-red-900/20 via-transparent to-black/60 z-10"></div>
       
       {/* Content */}
       <div className="relative z-20 text-center px-4 sm:px-6 max-w-5xl mx-auto">
