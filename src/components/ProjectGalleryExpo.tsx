@@ -213,7 +213,7 @@ export default function ProjectGalleryExpo () {
       <Hero />
 
 
-      <div className="relative w-full h-24 overflow-hidden z-10">
+      <div className="relative w-full h-8 overflow-hidden z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-black to-[#050305]" />
       </div>  
       
