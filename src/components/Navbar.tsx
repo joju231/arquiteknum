@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
             
             <Link
               to="/about"
-              className={`text-sm font-medium transition-colors font-secondary}
+              className={`text-sm font-medium transition-colors font-secondary`}
             >
               Sobre nosotros
             </Link>
