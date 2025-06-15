@@ -52,8 +52,6 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, bio, image }) => {
           src={image} 
           alt={name} 
           className="w-full h-48 object-cover object-center"
-          loading="lazy"
-          decoding="async"
         />
       </div>
       <div className="p-4">
@@ -88,19 +86,19 @@ const teamMembers: TeamMemberProps[] = [
     name: "Alejandra Rodríguez",
     role: "Arquitecta Principal",
     bio: "Con más de 15 años de experiencia, lidera nuestro equipo de diseño.",
-    image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+    image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg"
   },
   {
     name: "Marco Chen",
     role: "Arquitecto Senior",
     bio: "Especialista en diseño urbano y proyectos premiados.",
-    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
   },
   {
     name: "Sofía Rivera",
     role: "Directora de Diseño Interior",
     bio: "Combina funcionalidad con estética bella en cada proyecto.",
-    image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+    image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg"
   }
 ];
 
@@ -204,11 +202,9 @@ const About: React.FC = () => {
             <div className="relative">
               <div className="absolute -left-4 -top-4 w-48 h-48 bg-red-600/10 rounded-lg"></div>
               <img 
-                src="https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
+                src="https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg" 
                 alt="Proceso de diseño arquitectónico" 
                 className="w-full h-auto rounded-lg shadow-xl relative z-10"
-                loading="lazy"
-                decoding="async"
               />
               <div className="absolute -right-4 -bottom-4 w-48 h-48 bg-gray-100 rounded-lg"></div>
             </div>

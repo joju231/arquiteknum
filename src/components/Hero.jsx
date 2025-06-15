@@ -8,15 +8,12 @@ const Hero = () => {
       id="home" 
       className="relative w-full h-screen flex items-center justify-center bg-black overflow-hidden"
     >
-      {/* Background Image with optimized loading */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0 scale-in">
         <img
-          src="https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+          src="https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg"
           alt="Arquitectura moderna española"
           className="w-full h-full object-cover opacity-50"
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
         />
       </div>
       

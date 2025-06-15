@@ -9,163 +9,114 @@ import "../styles/fade-right-in.css"
 
 const ANIMATION_DURATION = 220;
 
-// Optimized project data with real architectural images
 const projects = [
   {
     id: 1,
     name: "Casa Lago",
-    cover: "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop",
-    miniLogo: "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop",
+    cover: "https://placehold.co/300x200/EEE/31343C?text=Casa+Lago",
+    miniLogo: "https://placehold.co/20x20/EEE/31343C?text=CL",
     images: [
-      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://placehold.co/600x400/EEE/31343C?text=Casa+Lago+1",
+      "https://placehold.co/600x400/DDD/31343C?text=Casa+Lago+2",
+      "https://placehold.co/600x400/CCC/31343C?text=Casa+Lago+3",
     ],
   },
   {
     id: 2,
     name: "Edificio Norte",
-    cover: "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop",
-    miniLogo: "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop",
+    cover: "https://placehold.co/300x200/BBB/31343C?text=Edificio+Norte",
+    miniLogo: "https://placehold.co/20x20/BBB/31343C?text=EN",
     images: [
-      "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://placehold.co/600x400/BBB/31343C?text=Edificio+Norte+1",
+      "https://placehold.co/600x400/AAA/31343C?text=Edificio+Norte+2",
     ],
   },
   {
     id: 3,
     name: "Pabellón Sur",
-    cover: "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop",
-    miniLogo: "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop",
+    cover: "https://placehold.co/300x200/CCC/31343C?text=Pabellón+Sur",
+    miniLogo: "https://placehold.co/20x20/CCC/31343C?text=PS",
     images: [
-      "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/2343465/pexels-photo-2343465.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://placehold.co/600x400/CCC/31343C?text=Pabellón+Sur+1",
+      "https://placehold.co/600x400/999/31343C?text=Pabellón+Sur+2",
+      "https://placehold.co/600x400/888/31343C?text=Pabellón+Sur+3",
+      "https://placehold.co/600x400/777/31343C?text=Pabellón+Sur+4",
     ],
   },
   {
     id: 4,
     name: "Parque Central",
-    cover: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop",
-    miniLogo: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop",
+    cover: "https://placehold.co/300x200/AAF/31343C?text=Parque+Central",
+    miniLogo: "https://placehold.co/20x20/AAF/31343C?text=PC",
     images: [
-      "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://placehold.co/600x400/AAF/31343C?text=Parque+Central+1",
+      "https://placehold.co/600x400/44F/31343C?text=Parque+Central+2",
     ],
   },
   {
     id: 5,
     name: "Torre Este",
-    cover: "https://images.pexels.com/photos/2343465/pexels-photo-2343465.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop",
-    miniLogo: "https://images.pexels.com/photos/2343465/pexels-photo-2343465.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop",
+    cover: "https://placehold.co/300x200/FFA/31343C?text=Torre+Este",
+    miniLogo: "https://placehold.co/20x20/FFA/31343C?text=TE",
     images: [
-      "https://images.pexels.com/photos/2343465/pexels-photo-2343465.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://placehold.co/600x400/FFA/31343C?text=Torre+Este+1",
+      "https://placehold.co/600x400/FA0/31343C?text=Torre+Este+2",
     ],
   },
   {
     id: 6,
     name: "Jardines Urbanos",
-    cover: "https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop",
-    miniLogo: "https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop",
+    cover: "https://placehold.co/300x200/0AF/31343C?text=Jardines+Urbanos",
+    miniLogo: "https://placehold.co/20x20/0AF/31343C?text=JU",
     images: [
-      "https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://placehold.co/600x400/0AF/31343C?text=Jardines+Urbanos+1",
+      "https://placehold.co/600x400/0AA/31343C?text=Jardines+Urbanos+2",
+      "https://placehold.co/600x400/0FF/31343C?text=Jardines+Urbanos+3",
     ],
   },
   {
     id: 7,
     name: "Mirador Oeste",
-    cover: "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop",
-    miniLogo: "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop",
+    cover: "https://placehold.co/300x200/F0A/31343C?text=Mirador+Oeste",
+    miniLogo: "https://placehold.co/20x20/F0A/31343C?text=MO",
     images: [
-      "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://placehold.co/600x400/F0A/31343C?text=Mirador+Oeste+1",
+      "https://placehold.co/600x400/F00/31343C?text=Mirador+Oeste+2",
     ],
   },
   {
     id: 8,
     name: "Residencial Delta",
-    cover: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop",
-    miniLogo: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop",
+    cover: "https://placehold.co/300x200/0FA/31343C?text=Residencial+Delta",
+    miniLogo: "https://placehold.co/20x20/0FA/31343C?text=RD",
     images: [
-      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://placehold.co/600x400/0FA/31343C?text=Residencial+Delta+1",
+      "https://placehold.co/600x400/0A0/31343C?text=Residencial+Delta+2",
+      "https://placehold.co/600x400/0FF/31343C?text=Residencial+Delta+3",
     ],
   },
   {
     id: 9,
     name: "Centro Cultural",
-    cover: "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop",
-    miniLogo: "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop",
+    cover: "https://placehold.co/300x200/CFA/31343C?text=Centro+Cultural",
+    miniLogo: "https://placehold.co/20x20/CFA/31343C?text=CC",
     images: [
-      "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://placehold.co/600x400/CFA/31343C?text=Centro+Cultural+1",
+      "https://placehold.co/600x400/CCC/31343C?text=Centro+Cultural+2",
     ],
   },
   {
     id: 10,
     name: "Galería Río",
-    cover: "https://images.pexels.com/photos/2343465/pexels-photo-2343465.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop",
-    miniLogo: "https://images.pexels.com/photos/2343465/pexels-photo-2343465.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop",
+    cover: "https://placehold.co/300x200/3AF/31343C?text=Galería+Río",
+    miniLogo: "https://placehold.co/20x20/3AF/31343C?text=GR",
     images: [
-      "https://images.pexels.com/photos/2343465/pexels-photo-2343465.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://placehold.co/600x400/3AF/31343C?text=Galería+Río+1",
+      "https://placehold.co/600x400/3AA/31343C?text=Galería+Río+2",
+      "https://placehold.co/600x400/3FF/31343C?text=Galería+Río+3",
     ],
   },
 ];
-
-// Image preloader component
-const OptimizedImage: React.FC<{
-  src: string;
-  alt: string;
-  className?: string;
-  style?: React.CSSProperties;
-  priority?: boolean;
-}> = ({ src, alt, className = '', style, priority = false }) => {
-  const [loaded, setLoaded] = useState(false);
-  const [error, setError] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    if (priority && imgRef.current) {
-      const img = new Image();
-      img.onload = () => setLoaded(true);
-      img.onerror = () => setError(true);
-      img.src = src;
-    }
-  }, [src, priority]);
-
-  return (
-    <div className={`relative overflow-hidden ${className}`} style={style}>
-      {!loaded && !error && (
-        <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
-          <div className="w-8 h-8 border-2 border-gray-300 border-t-red-600 rounded-full animate-spin"></div>
-        </div>
-      )}
-      <img
-        ref={imgRef}
-        src={src}
-        alt={alt}
-        className={`transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'} ${className}`}
-        style={style}
-        loading={priority ? 'eager' : 'lazy'}
-        onLoad={() => setLoaded(true)}
-        onError={() => setError(true)}
-        decoding="async"
-      />
-      {error && (
-        <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
-          <span className="text-gray-400 text-sm">Error loading image</span>
-        </div>
-      )}
-    </div>
-  );
-};
 
 export default function ProjectGalleryExpo () {
   const [selected, setSelected] = useState(projects[0].id);
@@ -176,24 +127,6 @@ export default function ProjectGalleryExpo () {
   const [isResizing, setIsResizing] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const swiperRef = useRef(null);
-
-  // Preload critical images
-  useEffect(() => {
-    const preloadImages = () => {
-      // Preload first project images and all cover images
-      const imagesToPreload = [
-        ...projects[0].images,
-        ...projects.slice(0, 5).map(p => p.cover), // Preload first 5 covers
-      ];
-
-      imagesToPreload.forEach(src => {
-        const img = new Image();
-        img.src = src;
-      });
-    };
-
-    preloadImages();
-  }, []);
 
   // Check screen size
   useEffect(() => {
@@ -209,16 +142,6 @@ export default function ProjectGalleryExpo () {
   const handleCardClick = (projectId) => {
     if (animating || selected === projectId) return;
     setAnimating(projectId);
-    
-    // Preload images for the selected project
-    const selectedProject = projects.find(p => p.id === projectId);
-    if (selectedProject) {
-      selectedProject.images.forEach(src => {
-        const img = new Image();
-        img.src = src;
-      });
-    }
-
     setTimeout(() => {
       setSelected(projectId);
       setAnimating(null);
@@ -335,11 +258,11 @@ export default function ProjectGalleryExpo () {
 
           {/* Project mini logo */}
           <div className="absolute top-4 left-4 z-20">
-            <OptimizedImage
+            <img
               src={activeProject.miniLogo}
-              alt={`${activeProject.name} mini logo`}
+              alt={`Imagen de ${activeProject.name} mini logo`}
               className="w-8 h-8 md:w-10 md:h-10 object-cover rounded-md border border-gray-200 bg-white"
-              priority={true}
+              style={{ background: "#eee" }}
             />
           </div>
 
@@ -349,8 +272,6 @@ export default function ProjectGalleryExpo () {
             slidesPerView={1}
             spaceBetween={0}
             className="w-full max-w-4xl"
-            preloadImages={false}
-            lazy={true}
           >
             {activeProject.images.map((img, i) => (
               <SwiperSlide key={i}>
@@ -363,14 +284,13 @@ export default function ProjectGalleryExpo () {
                     minHeight: isMobile ? "40vh" : "50vh",
                   }}
                 >
-                  <OptimizedImage
+                  <img
                     src={img}
                     alt={`Imagen ${i + 1} de ${activeProject.name}`}
                     className="w-auto h-auto max-w-full object-contain"
                     style={{
                       maxHeight: isMobile ? "40vh" : "75vh"
                     }}
-                    priority={i === 0} // Prioritize first image
                   />
                 </div>
               </SwiperSlide>
@@ -417,7 +337,7 @@ export default function ProjectGalleryExpo () {
             </div>
           )}
 
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <button
               key={project.id}
               type="button"
@@ -430,7 +350,7 @@ export default function ProjectGalleryExpo () {
               tabIndex={0}
             >
               <div className="relative flex items-center justify-center">
-                <OptimizedImage
+                <img
                   src={project.cover}
                   alt={project.name}
                   className={`
@@ -442,14 +362,13 @@ export default function ProjectGalleryExpo () {
                     pointerEvents: "none",
                     willChange: "transform, opacity",
                   }}
-                  priority={index < 3} // Prioritize first 3 covers
                 />
               </div>
               
               {/* Project name - show on mobile or when sidebar is wide enough on desktop */}
               {(isMobile || (!isMobile && sidebarWidth > 120)) && (
                 <div className="p-2 bg-white text-left flex items-center gap-2">
-                  <OptimizedImage
+                  <img
                     src={project.miniLogo}
                     alt={`${project.name} mini logo`}
                     className="w-4 h-4 md:w-5 md:h-5 object-cover rounded-sm flex-shrink-0"
