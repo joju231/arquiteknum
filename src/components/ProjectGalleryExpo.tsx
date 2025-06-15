@@ -214,8 +214,9 @@ export default function ProjectGalleryExpo () {
 
 
       <div className="relative w-full h-24 overflow-hidden z-10">
-        <div className="absolute inset-0 bg-linear-to-b from-black to-[#050305]" />
-      </div>   
+        <div className="absolute inset-0 bg-gradient-to-b from-black to-[#050305]" />
+      </div>  
+      
       <div
         className="flex w-full h-screen max-h-screen overflow-hidden min-h-0 relative z-20"
         style={{ 
