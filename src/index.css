@@ -7,6 +7,12 @@ html, body {
   font-family: var(--font-body);
 }
 
+/* Optimize image loading and rendering */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
 .loading-screen {
   position: fixed;
   inset: 0;
@@ -205,4 +211,18 @@ html, body {
 
 .font-light {
   font-family: var(--font-light);
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Smooth transitions for navigation */
+.page-transition {
+  transition: opacity 0.2s ease-in-out;
 }
