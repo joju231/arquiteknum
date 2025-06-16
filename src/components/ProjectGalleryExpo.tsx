@@ -35,7 +35,7 @@ const projects = [
   },
   {
     id: 2,
-    name: "La Masó",
+    name: "La Maso",
     cover: "/assets/Proyecto La Maso/28.jpg",
     miniLogo: "https://placehold.co/20x20/2F4F4F/FFFFFF?text=LM",
     images: [
