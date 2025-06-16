@@ -72,19 +72,19 @@ const projects = [
         caption: "Salón-comedor con mobiliario de diseño escandinavo y paleta cromática neutra"
       },
       {
-        src: "/assets/Proyecto Lagasca/14.jpg",
+        src: "/assets/Proyecto Lagasca/25.jpg",
         caption: "Zona de estar con sillones vintage y mesa de centro de madera maciza"
       },
       {
-        src: "/assets/Proyecto Lagasca/16.jpg",
+        src: "/assets/Proyecto Lagasca/24.jpg",
         caption: "Dormitorio principal minimalista con cabecero tapizado y iluminación colgante"
       },
       {
-        src: "/assets/Proyecto Lagasca/24.jpg",
+        src: "/assets/Proyecto Lagasca/16.jpg",
         caption: "Dormitorio con puertas correderas y aprovechamiento máximo del espacio"
       },
       {
-        src: "/assets/Proyecto Lagasca/25.jpg",
+        src: "/assets/Proyecto Lagasca/14.jpg",
         caption: "Armarios empotrados de suelo a techo con acabado lacado blanco mate"
       },
     ],
