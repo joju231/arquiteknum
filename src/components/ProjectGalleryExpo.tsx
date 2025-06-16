@@ -396,7 +396,7 @@ export default function ProjectGalleryExpo () {
                   {/* Caption Bar - Only shown if caption exists */}
                   {imageData.caption && (
                     <div className="w-full bg-white/95 backdrop-blur-sm border-t border-gray-200/50 px-4 md:px-6 py-3 md:py-4">
-                      <div className="max-w-3xl mx-auto">
+                      <div className="max-w-3xl mx-auto my-5">
                         <p className="text-gray-800 text-sm md:text-base font-light leading-relaxed text-center font-secondary">
                           {imageData.caption}
                         </p>
