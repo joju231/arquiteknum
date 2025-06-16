@@ -16,6 +16,10 @@ const projects = [
     miniLogo: "https://placehold.co/20x20/8B4513/FFFFFF?text=HGV",
     images: [
       {
+        src: "/assets/Proyecto Hotel Gran Via/4242 .jpg",
+        caption: "Vista panorámica del dormitorio con integración de espacios y materiales nobles"
+      },
+      {
         src: "/assets/Proyecto Hotel Gran Via/22.jpg",
         caption: "Dormitorio principal con elementos de madera natural y diseño contemporáneo"
       },
@@ -26,10 +30,6 @@ const projects = [
       {
         src: "/assets/Proyecto Hotel Gran Via/25.jpg",
         caption: "Baño principal con bañera de hidromasaje y acabados en piedra natural"
-      },
-      {
-        src: "/assets/Proyecto Hotel Gran Via/4242 .jpg",
-        caption: "Vista panorámica del dormitorio con integración de espacios y materiales nobles"
       },
     ],
   },
