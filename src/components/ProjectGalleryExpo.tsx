@@ -12,24 +12,24 @@ const ANIMATION_DURATION = 220;
 const projects = [
   {
     id: 1,
-    name: "Gran Vía",
-    cover: "/gran via/22.jpg",
-    miniLogo: "https://placehold.co/20x20/8B4513/FFFFFF?text=GV",
+    name: "Hotel Gran Vía",
+    cover: "/assets/Proyecto Hotel Gran Via/22.jpg",
+    miniLogo: "https://placehold.co/20x20/8B4513/FFFFFF?text=HGV",
     images: [
       {
-        src: "/gran via/22.jpg",
+        src: "/assets/Proyecto Hotel Gran Via/22.jpg",
         caption: "Dormitorio principal con elementos de madera natural y diseño contemporáneo"
       },
       {
-        src: "/gran via/23.jpg",
+        src: "/assets/Proyecto Hotel Gran Via/23.jpg",
         caption: "Detalle del techo de madera con iluminación integrada y textiles de alta calidad"
       },
       {
-        src: "/gran via/25.jpg",
+        src: "/assets/Proyecto Hotel Gran Via/25.jpg",
         caption: "Baño principal con bañera de hidromasaje y acabados en piedra natural"
       },
       {
-        src: "/gran via/4242 .jpg",
+        src: "/assets/Proyecto Hotel Gran Via/4242 .jpg",
         caption: "Vista panorámica del dormitorio con integración de espacios y materiales nobles"
       },
     ],
@@ -37,27 +37,27 @@ const projects = [
   {
     id: 2,
     name: "La Masó",
-    cover: "/la maso/28.jpg",
+    cover: "/assets/Proyecto La Maso/28.jpg",
     miniLogo: "https://placehold.co/20x20/2F4F4F/FFFFFF?text=LM",
     images: [
       {
-        src: "/la maso/28.jpg",
+        src: "/assets/Proyecto La Maso/28.jpg",
         caption: "Pasillo principal con iluminación LED integrada y suelos de parquet en espiga"
       },
       {
-        src: "/la maso/33.jpg",
+        src: "/assets/Proyecto La Maso/33.jpg",
         caption: "Vestidor con armarios empotrados de cristal ahumado y sistema de iluminación perimetral"
       },
       {
-        src: "/la maso/35.jpg",
+        src: "/assets/Proyecto La Maso/35.jpg",
         caption: "Baño principal con doble lavabo sobre encimera de madera y ducha de obra"
       },
       {
-        src: "/la maso/55.jpg",
+        src: "/assets/Proyecto La Maso/55.jpg",
         caption: "Baño secundario con acabados en microcemento y grifería empotrada"
       },
       {
-        src: "/la maso/61.jpg",
+        src: "/assets/Proyecto La Maso/61.jpg",
         caption: "Baño con bañera integrada y revestimientos cerámicos de gran formato"
       },
     ],
@@ -65,144 +65,152 @@ const projects = [
   {
     id: 3,
     name: "Lagasca",
-    cover: "/lagasca/26.jpg",
+    cover: "/assets/Proyecto Lagasca/26.jpg",
     miniLogo: "https://placehold.co/20x20/F5F5DC/333333?text=LG",
     images: [
       {
-        src: "/lagasca/26.jpg",
+        src: "/assets/Proyecto Lagasca/26.jpg",
         caption: "Salón-comedor con mobiliario de diseño escandinavo y paleta cromática neutra"
       },
       {
-        src: "/lagasca/14.jpg",
+        src: "/assets/Proyecto Lagasca/14.jpg",
         caption: "Zona de estar con sillones vintage y mesa de centro de madera maciza"
       },
       {
-        src: "/lagasca/16.jpg",
+        src: "/assets/Proyecto Lagasca/16.jpg",
         caption: "Dormitorio principal minimalista con cabecero tapizado y iluminación colgante"
       },
       {
-        src: "/lagasca/24.jpg",
+        src: "/assets/Proyecto Lagasca/24.jpg",
         caption: "Dormitorio con puertas correderas y aprovechamiento máximo del espacio"
       },
       {
-        src: "/lagasca/25.jpg",
+        src: "/assets/Proyecto Lagasca/25.jpg",
         caption: "Armarios empotrados de suelo a techo con acabado lacado blanco mate"
       },
     ],
   },
   {
     id: 4,
-    name: "Parque Central",
-    cover: "https://placehold.co/300x200/AAF/31343C?text=Parque+Central",
-    miniLogo: "https://placehold.co/20x20/AAF/31343C?text=PC",
+    name: "Loft Manoteras",
+    cover: "/assets/Proyecto Loft Manoteras/16.jpg",
+    miniLogo: "https://placehold.co/20x20/4A5568/FFFFFF?text=LM",
     images: [
       {
-        src: "https://placehold.co/600x400/AAF/31343C?text=Parque+Central+1",
-        caption: "Diseño urbano sostenible con sistemas de drenaje natural"
+        src: "/assets/Proyecto Loft Manoteras/1.jpg",
+        caption: "Espacio diáfano con diseño industrial y acabados contemporáneos"
       },
       {
-        src: "https://placehold.co/600x400/44F/31343C?text=Parque+Central+2"
+        src: "/assets/Proyecto Loft Manoteras/3.jpg",
+        caption: "Zona de estar con elementos arquitectónicos expuestos y iluminación natural"
+      },
+      {
+        src: "/assets/Proyecto Loft Manoteras/10.jpg",
+        caption: "Detalle de materiales nobles y texturas contrastantes"
+      },
+      {
+        src: "/assets/Proyecto Loft Manoteras/16.jpg",
+        caption: "Integración perfecta entre espacios públicos y privados del loft"
       },
     ],
   },
   {
     id: 5,
-    name: "Torre Este",
-    cover: "https://placehold.co/300x200/FFA/31343C?text=Torre+Este",
-    miniLogo: "https://placehold.co/20x20/FFA/31343C?text=TE",
+    name: "López Ibor",
+    cover: "/assets/Proyecto Lopez Ibor/Dr.JJ.Ibor14-16.jpg",
+    miniLogo: "https://placehold.co/20x20/2D3748/FFFFFF?text=LI",
     images: [
       {
-        src: "https://placehold.co/600x400/FFA/31343C?text=Torre+Este+1"
+        src: "/assets/Proyecto Lopez Ibor/Dr.JJ.Ibor14-10.jpg",
+        caption: "Consulta médica con diseño funcional y ambiente acogedor"
       },
       {
-        src: "https://placehold.co/600x400/FA0/31343C?text=Torre+Este+2",
-        caption: "Vista nocturna con iluminación arquitectónica LED integrada"
+        src: "/assets/Proyecto Lopez Ibor/Dr.JJ.Ibor14-12.jpg",
+        caption: "Sala de espera con mobiliario contemporáneo y iluminación cálida"
+      },
+      {
+        src: "/assets/Proyecto Lopez Ibor/Dr.JJ.Ibor14-13.jpg",
+        caption: "Recepción con líneas limpias y materiales de alta calidad"
+      },
+      {
+        src: "/assets/Proyecto Lopez Ibor/Dr.JJ.Ibor14-16.jpg",
+        caption: "Espacio de trabajo optimizado para la práctica médica profesional"
+      },
+      {
+        src: "/assets/Proyecto Lopez Ibor/Dr.JJ.Ibor14-18.jpg",
+        caption: "Detalle de acabados premium y diseño ergonómico"
       },
     ],
   },
   {
     id: 6,
-    name: "Jardines Urbanos",
-    cover: "https://placehold.co/300x200/0AF/31343C?text=Jardines+Urbanos",
-    miniLogo: "https://placehold.co/20x20/0AF/31343C?text=JU",
+    name: "Oficinas",
+    cover: "/assets/Proyecto Oficinas/15.jpg",
+    miniLogo: "https://placehold.co/20x20/1A202C/FFFFFF?text=OF",
     images: [
       {
-        src: "https://placehold.co/600x400/0AF/31343C?text=Jardines+Urbanos+1",
-        caption: "Terrazas escalonadas con vegetación mediterránea nativa"
+        src: "/assets/Proyecto Oficinas/1.jpg",
+        caption: "Espacio de trabajo moderno con diseño corporativo elegante"
       },
       {
-        src: "https://placehold.co/600x400/0AA/31343C?text=Jardines+Urbanos+2"
+        src: "/assets/Proyecto Oficinas/4.jpg",
+        caption: "Zona de reuniones con tecnología integrada y acústica optimizada"
       },
       {
-        src: "https://placehold.co/600x400/0FF/31343C?text=Jardines+Urbanos+3",
-        caption: "Sistema de riego automatizado con sensores de humedad"
+        src: "/assets/Proyecto Oficinas/5.jpg",
+        caption: "Área colaborativa con mobiliario flexible y iluminación natural"
+      },
+      {
+        src: "/assets/Proyecto Oficinas/14.jpg",
+        caption: "Recepción corporativa con imagen de marca y materiales premium"
+      },
+      {
+        src: "/assets/Proyecto Oficinas/15.jpg",
+        caption: "Oficina ejecutiva con diseño funcional y acabados de lujo"
+      },
+      {
+        src: "/assets/Proyecto Oficinas/22.jpg",
+        caption: "Sala de conferencias con equipamiento audiovisual de última generación"
+      },
+      {
+        src: "/assets/Proyecto Oficinas/26.jpg",
+        caption: "Espacio de trabajo abierto que fomenta la colaboración y creatividad"
+      },
+      {
+        src: "/assets/Proyecto Oficinas/29.jpg",
+        caption: "Zona de descanso con diseño biofílico y elementos naturales"
       },
     ],
   },
   {
     id: 7,
-    name: "Mirador Oeste",
-    cover: "https://placehold.co/300x200/F0A/31343C?text=Mirador+Oeste",
-    miniLogo: "https://placehold.co/20x20/F0A/31343C?text=MO",
+    name: "Unifamiliar",
+    cover: "/assets/Proyecto unifamiliar/15.jpg",
+    miniLogo: "https://placehold.co/20x20/68D391/FFFFFF?text=UF",
     images: [
       {
-        src: "https://placehold.co/600x400/F0A/31343C?text=Mirador+Oeste+1"
+        src: "/assets/Proyecto unifamiliar/9.jpg",
+        caption: "Fachada contemporánea con líneas arquitectónicas limpias y materiales sostenibles"
       },
       {
-        src: "https://placehold.co/600x400/F00/31343C?text=Mirador+Oeste+2",
-        caption: "Estructura de acero corten con vistas panorámicas de la ciudad"
-      },
-    ],
-  },
-  {
-    id: 8,
-    name: "Residencial Delta",
-    cover: "https://placehold.co/300x200/0FA/31343C?text=Residencial+Delta",
-    miniLogo: "https://placehold.co/20x20/0FA/31343C?text=RD",
-    images: [
-      {
-        src: "https://placehold.co/600x400/0FA/31343C?text=Residencial+Delta+1",
-        caption: "Complejo residencial con certificación energética A+"
+        src: "/assets/Proyecto unifamiliar/11.jpg",
+        caption: "Salón principal con doble altura y conexión visual con el jardín"
       },
       {
-        src: "https://placehold.co/600x400/0A0/31343C?text=Residencial+Delta+2"
+        src: "/assets/Proyecto unifamiliar/12.jpg",
+        caption: "Cocina integrada con isla central y electrodomésticos de alta gama"
       },
       {
-        src: "https://placehold.co/600x400/0FF/31343C?text=Residencial+Delta+3"
-      },
-    ],
-  },
-  {
-    id: 9,
-    name: "Centro Cultural",
-    cover: "https://placehold.co/300x200/CFA/31343C?text=Centro+Cultural",
-    miniLogo: "https://placehold.co/20x20/CFA/31343C?text=CC",
-    images: [
-      {
-        src: "https://placehold.co/600x400/CFA/31343C?text=Centro+Cultural+1"
+        src: "/assets/Proyecto unifamiliar/13.jpg",
+        caption: "Dormitorio principal con vestidor integrado y terraza privada"
       },
       {
-        src: "https://placehold.co/600x400/CCC/31343C?text=Centro+Cultural+2",
-        caption: "Auditorio principal con acústica optimizada y tecnología audiovisual"
-      },
-    ],
-  },
-  {
-    id: 10,
-    name: "Galería Río",
-    cover: "https://placehold.co/300x200/3AF/31343C?text=Galería+Río",
-    miniLogo: "https://placehold.co/20x20/3AF/31343C?text=GR",
-    images: [
-      {
-        src: "https://placehold.co/600x400/3AF/31343C?text=Galería+Río+1",
-        caption: "Espacio expositivo con iluminación natural controlada"
+        src: "/assets/Proyecto unifamiliar/14.jpg",
+        caption: "Baño principal con acabados en piedra natural y bañera exenta"
       },
       {
-        src: "https://placehold.co/600x400/3AA/31343C?text=Galería+Río+2"
-      },
-      {
-        src: "https://placehold.co/600x400/3FF/31343C?text=Galería+Río+3",
-        caption: "Sala de eventos con capacidad para 200 personas"
+        src: "/assets/Proyecto unifamiliar/15.jpg",
+        caption: "Zona exterior con piscina y área de entretenimiento familiar"
       },
     ],
   },
