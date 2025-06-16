@@ -12,58 +12,81 @@ const ANIMATION_DURATION = 220;
 const projects = [
   {
     id: 1,
-    name: "Casa Lago",
-    cover: "https://placehold.co/300x200/EEE/31343C?text=Casa+Lago",
-    miniLogo: "https://placehold.co/20x20/EEE/31343C?text=CL",
+    name: "Gran Vía",
+    cover: "/gran via/22.jpg",
+    miniLogo: "https://placehold.co/20x20/8B4513/FFFFFF?text=GV",
     images: [
       {
-        src: "https://placehold.co/600x400/EEE/31343C?text=Casa+Lago+1",
-        caption: "Reforma integral de un apartamento en el barrio de Salamanca de Madrid"
+        src: "/gran via/22.jpg",
+        caption: "Dormitorio principal con elementos de madera natural y diseño contemporáneo"
       },
       {
-        src: "https://placehold.co/600x400/DDD/31343C?text=Casa+Lago+2",
-        caption: "Diseño contemporáneo con materiales naturales y acabados de lujo"
+        src: "/gran via/23.jpg",
+        caption: "Detalle del techo de madera con iluminación integrada y textiles de alta calidad"
       },
       {
-        src: "https://placehold.co/600x400/CCC/31343C?text=Casa+Lago+3"
-        // No caption for this image
+        src: "/gran via/25.jpg",
+        caption: "Baño principal con bañera de hidromasaje y acabados en piedra natural"
+      },
+      {
+        src: "/gran via/4242 .jpg",
+        caption: "Vista panorámica del dormitorio con integración de espacios y materiales nobles"
       },
     ],
   },
   {
     id: 2,
-    name: "Edificio Norte",
-    cover: "https://placehold.co/300x200/BBB/31343C?text=Edificio+Norte",
-    miniLogo: "https://placehold.co/20x20/BBB/31343C?text=EN",
+    name: "La Masó",
+    cover: "/la maso/28.jpg",
+    miniLogo: "https://placehold.co/20x20/2F4F4F/FFFFFF?text=LM",
     images: [
       {
-        src: "https://placehold.co/600x400/BBB/31343C?text=Edificio+Norte+1",
-        caption: "Fachada principal con elementos de hormigón y vidrio estructural"
+        src: "/la maso/28.jpg",
+        caption: "Pasillo principal con iluminación LED integrada y suelos de parquet en espiga"
       },
       {
-        src: "https://placehold.co/600x400/AAA/31343C?text=Edificio+Norte+2"
+        src: "/la maso/33.jpg",
+        caption: "Vestidor con armarios empotrados de cristal ahumado y sistema de iluminación perimetral"
+      },
+      {
+        src: "/la maso/35.jpg",
+        caption: "Baño principal con doble lavabo sobre encimera de madera y ducha de obra"
+      },
+      {
+        src: "/la maso/55.jpg",
+        caption: "Baño secundario con acabados en microcemento y grifería empotrada"
+      },
+      {
+        src: "/la maso/61.jpg",
+        caption: "Baño con bañera integrada y revestimientos cerámicos de gran formato"
       },
     ],
   },
   {
     id: 3,
-    name: "Pabellón Sur",
-    cover: "https://placehold.co/300x200/CCC/31343C?text=Pabellón+Sur",
-    miniLogo: "https://placehold.co/20x20/CCC/31343C?text=PS",
+    name: "Lagasca",
+    cover: "/lagasca/26.jpg",
+    miniLogo: "https://placehold.co/20x20/F5F5DC/333333?text=LG",
     images: [
       {
-        src: "https://placehold.co/600x400/CCC/31343C?text=Pabellón+Sur+1",
-        caption: "Espacio multifuncional con doble altura y luz natural cenital"
+        src: "/lagasca/26.jpg",
+        caption: "Salón-comedor con mobiliario de diseño escandinavo y paleta cromática neutra"
       },
       {
-        src: "https://placehold.co/600x400/999/31343C?text=Pabellón+Sur+2"
+        src: "/lagasca/14.jpg",
+        caption: "Zona de estar con sillones vintage y mesa de centro de madera maciza"
       },
       {
-        src: "https://placehold.co/600x400/888/31343C?text=Pabellón+Sur+3",
-        caption: "Integración paisajística con jardines verticales autóctonos"
+        src: "/lagasca/16.jpg",
+        caption: "Dormitorio principal minimalista con cabecero tapizado y iluminación colgante"
       },
       {
-        src: "https://placehold.co/600x400/777/31343C?text=Pabellón+Sur+4"
+        src: "/lagasca/24.jpg",
+        caption: "Dormitorio con puertas correderas y aprovechamiento máximo del espacio"
+      },
+      {
+        src: "/lagasca/25.jpg",
+        caption: "Armarios empotrados de suelo a techo con acabado lacado blanco mate"
       },
     ],
   },
