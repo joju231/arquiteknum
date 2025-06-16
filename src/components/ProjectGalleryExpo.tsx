@@ -40,12 +40,12 @@ const projects = [
     miniLogo: "https://placehold.co/20x20/2F4F4F/FFFFFF?text=LM",
     images: [
       {
-        src: "/assets/Proyecto La Maso/28.jpg",
-        caption: "Pasillo principal con iluminación LED integrada y suelos de parquet en espiga"
-      },
-      {
         src: "/assets/Proyecto La Maso/33.jpg",
         caption: "Vestidor con armarios empotrados de cristal ahumado y sistema de iluminación perimetral"
+      },
+      {
+        src: "/assets/Proyecto La Maso/28.jpg",
+        caption: "Pasillo principal con iluminación LED integrada y suelos de parquet en espiga"
       },
       {
         src: "/assets/Proyecto La Maso/35.jpg",
