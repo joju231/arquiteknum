@@ -17,19 +17,17 @@ const projects = [
     images: [
       {
         src: "/assets/Proyecto Hotel Gran Via/4242 .jpg",
-        caption: "Vista panorámica del dormitorio con integración de espacios y materiales nobles"
+        caption: "Hotel situado en la madrileña Gran Vía. Se buca crear una suite con spa incluido, que invite a la relajación en medio del bullicio de la ciudad."
       },
       {
         src: "/assets/Proyecto Hotel Gran Via/22.jpg",
-        caption: "Dormitorio principal con elementos de madera natural y diseño contemporáneo"
       },
       {
         src: "/assets/Proyecto Hotel Gran Via/23.jpg",
-        caption: "Detalle del techo de madera con iluminación integrada y textiles de alta calidad"
+        caption: "Maderas, piedra, una cama que parece flotar, se combinan para lograr una atmósfera de calma y relajación."
       },
       {
         src: "/assets/Proyecto Hotel Gran Via/25.jpg",
-        caption: "Baño principal con bañera de hidromasaje y acabados en piedra natural"
       },
     ],
   },
@@ -41,23 +39,20 @@ const projects = [
     images: [
       {
         src: "/assets/Proyecto La Maso/33.jpg",
-        caption: "Vestidor con armarios empotrados de cristal ahumado y sistema de iluminación perimetral"
+        caption: "Se modifica la distribución, creando un gran salón entorno al cual gira la vida familiar. Se crean vestidores en las habitaciones, cuerpos de armarios y se hace un proyecto nuevo de iluminación en el que las luces perimetrales y el led juegan un papel principal."
       },
       {
         src: "/assets/Proyecto La Maso/28.jpg",
-        caption: "Pasillo principal con iluminación LED integrada y suelos de parquet en espiga"
       },
       {
         src: "/assets/Proyecto La Maso/35.jpg",
-        caption: "Baño principal con doble lavabo sobre encimera de madera y ducha de obra"
+        caption: "Los baños se reforman por completo, empleando materiales como la madera, porcelánicos y bañeras exentas."
       },
       {
         src: "/assets/Proyecto La Maso/55.jpg",
-        caption: "Baño secundario con acabados en microcemento y grifería empotrada"
       },
       {
         src: "/assets/Proyecto La Maso/61.jpg",
-        caption: "Baño con bañera integrada y revestimientos cerámicos de gran formato"
       },
     ],
   },
@@ -69,23 +64,20 @@ const projects = [
     images: [
       {
         src: "/assets/Proyecto Lagasca/26.jpg",
-        caption: "Salón-comedor con mobiliario de diseño escandinavo y paleta cromática neutra"
+        caption: "Reforma integral de un apartamento en el barrio de Salamanca en Madrid."
       },
       {
         src: "/assets/Proyecto Lagasca/25.jpg",
-        caption: "Zona de estar con sillones vintage y mesa de centro de madera maciza"
       },
       {
         src: "/assets/Proyecto Lagasca/24.jpg",
-        caption: "Dormitorio principal minimalista con cabecero tapizado y iluminación colgante"
+        caption: "Se moderniza el cuarto de baño y la cocina, y se crea un dormitorio en el salón separado por puertas correderas que permiten dividir dos ambientes o cerrar una única "gran estancia"."
       },
       {
         src: "/assets/Proyecto Lagasca/16.jpg",
-        caption: "Dormitorio con puertas correderas y aprovechamiento máximo del espacio"
       },
       {
         src: "/assets/Proyecto Lagasca/14.jpg",
-        caption: "Armarios empotrados de suelo a techo con acabado lacado blanco mate"
       },
     ],
   },
@@ -97,19 +89,17 @@ const projects = [
     images: [
       {
         src: "/assets/Proyecto Loft Manoteras/1.jpg",
-        caption: "Espacio diáfano con diseño industrial y acabados contemporáneos"
+        caption: "Nuestro cliente necesitaba aumentar el espacio en su loft"
       },
       {
         src: "/assets/Proyecto Loft Manoteras/3.jpg",
-        caption: "Zona de estar con elementos arquitectónicos expuestos y iluminación natural"
       },
       {
         src: "/assets/Proyecto Loft Manoteras/10.jpg",
-        caption: "Detalle de materiales nobles y texturas contrastantes"
+        caption: "Para ello se amplía la entreplanta utilizando el vidrio sobre forjado, para no perder la luz natural que entra por el gran ventanal."
       },
       {
         src: "/assets/Proyecto Loft Manoteras/16.jpg",
-        caption: "Integración perfecta entre espacios públicos y privados del loft"
       },
     ],
   },
@@ -121,23 +111,19 @@ const projects = [
     images: [
       {
         src: "/assets/Proyecto Lopez Ibor/Dr.JJ.Ibor14-10.jpg",
-        caption: "Consulta médica con diseño funcional y ambiente acogedor"
+        caption: "En esta vivienda se trata de integrar una cocina en el salón, al tiempo que se ejecuta un nuevo proyecto de iluminación y se pintan paredes y techos."
       },
       {
         src: "/assets/Proyecto Lopez Ibor/Dr.JJ.Ibor14-12.jpg",
-        caption: "Sala de espera con mobiliario contemporáneo y iluminación cálida"
       },
       {
         src: "/assets/Proyecto Lopez Ibor/Dr.JJ.Ibor14-13.jpg",
-        caption: "Recepción con líneas limpias y materiales de alta calidad"
       },
       {
         src: "/assets/Proyecto Lopez Ibor/Dr.JJ.Ibor14-16.jpg",
-        caption: "Espacio de trabajo optimizado para la práctica médica profesional"
       },
       {
         src: "/assets/Proyecto Lopez Ibor/Dr.JJ.Ibor14-18.jpg",
-        caption: "Detalle de acabados premium y diseño ergonómico"
       },
     ],
   },
@@ -149,35 +135,29 @@ const projects = [
     images: [
       {
         src: "/assets/Proyecto Oficinas/1.jpg",
-        caption: "Espacio de trabajo moderno con diseño corporativo elegante"
+        caption: "Reforma integral de espacio de 1.000 m² para oficinas en zona de Ortega y Gasset."
       },
       {
         src: "/assets/Proyecto Oficinas/4.jpg",
-        caption: "Zona de reuniones con tecnología integrada y acústica optimizada"
       },
       {
         src: "/assets/Proyecto Oficinas/5.jpg",
-        caption: "Área colaborativa con mobiliario flexible y iluminación natural"
       },
       {
         src: "/assets/Proyecto Oficinas/14.jpg",
-        caption: "Recepción corporativa con imagen de marca y materiales premium"
+        caption: "Este proyecto supone un reto al tratarse de una graan superficie sin apenas luz natural, adaptando unas oficinas con más de 40 años de antigüedad que reflejan la imagen del nuevo propietario e incluyen todos los requerimientos de accesibilidad."
       },
       {
         src: "/assets/Proyecto Oficinas/15.jpg",
-        caption: "Oficina ejecutiva con diseño funcional y acabados de lujo"
       },
       {
         src: "/assets/Proyecto Oficinas/22.jpg",
-        caption: "Sala de conferencias con equipamiento audiovisual de última generación"
       },
       {
         src: "/assets/Proyecto Oficinas/26.jpg",
-        caption: "Espacio de trabajo abierto que fomenta la colaboración y creatividad"
       },
       {
         src: "/assets/Proyecto Oficinas/29.jpg",
-        caption: "Zona de descanso con diseño biofílico y elementos naturales"
       },
     ],
   },
@@ -189,27 +169,24 @@ const projects = [
     images: [
       {
         src: "/assets/Proyecto unifamiliar/9.jpg",
-        caption: "Fachada contemporánea con líneas arquitectónicas limpias y materiales sostenibles"
+        caption: "El azulejp original se sustituye por porcelánico en suelo y paredes. Se eliminan las bañeras creando duchas de suelo continuo. Se genera así mayor aplitud y un ambiente más minimalista y relajado"
       },
       {
         src: "/assets/Proyecto unifamiliar/11.jpg",
-        caption: "Salón principal con doble altura y conexión visual con el jardín"
       },
       {
         src: "/assets/Proyecto unifamiliar/12.jpg",
-        caption: "Cocina integrada con isla central y electrodomésticos de alta gama"
       },
       {
         src: "/assets/Proyecto unifamiliar/13.jpg",
-        caption: "Dormitorio principal con vestidor integrado y terraza privada"
+        caption: "Se busca dar un aire completamente nuevo a este chalet de la sierra de Madrid. Para ello se rompe por completo la fachada para untegrar el jardín en la vivienda a través de un gran ventanal, ganando así luz natural."
       },
       {
         src: "/assets/Proyecto unifamiliar/14.jpg",
-        caption: "Baño principal con acabados en piedra natural y bañera exenta"
+        caption: "La cocina se rehace por completo creando una gran isla central con encimera de Kryon."
       },
       {
         src: "/assets/Proyecto unifamiliar/15.jpg",
-        caption: "Zona exterior con piscina y área de entretenimiento familiar"
       },
     ],
   },
