@@ -71,7 +71,7 @@ const projects = [
       },
       {
         src: "/assets/Proyecto Lagasca/24.jpg",
-        caption: "Se moderniza el cuarto de baño y la cocina, y se crea un dormitorio en el salón separado por puertas correderas que permiten dividir dos ambientes o cerrar una única "gran estancia"."
+        caption: "Se moderniza el cuarto de baño y la cocina, y se crea un dormitorio en el salón separado por puertas correderas que permiten dividir dos ambientes o cerrar una única gran estancia."
       },
       {
         src: "/assets/Proyecto Lagasca/16.jpg",
